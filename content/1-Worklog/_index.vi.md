@@ -8,9 +8,9 @@ pre: " <b> 1. </b> "
 
 Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực tập, thực hành lab và triển khai dự án trong khuôn khổ chương trình First Cloud AI Journey (FCAJ). Báo cáo được thực hiện trong suốt quá trình thực tập với nội dung chi tiết từng tuần như sau:
 
-**Tuần 1:** [Làm quen quy định FCAJ, tạo tài khoản AWS, hoàn thành 5 task Explore AWS và nhận 100$ Credit](./1.1-week1/)
+**Tuần 1:** [Làm quen quy định FCAJ, tạo tài khoản AWS, hoàn thành 5 task Explore AWS và nhận 100$ Credit](./1.1-Week1/)
 
-**Tuần 2:** [Thực hành tối ưu hóa chi phí EC2 bằng Lambda, tích hợp Slack Webhooks và tham gia Kickoff Buildrathon](./1.2-week2/)
+**Tuần 2:** [Thực hành tối ưu hóa chi phí EC2 bằng Lambda, tích hợp Slack Webhooks và tham gia Kickoff Buildrathon](./1.2-Week2/)
 
 **Tuần 3:** [Làm công việc B...](1.3-week3/)
 
