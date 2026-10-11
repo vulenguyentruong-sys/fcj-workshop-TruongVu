@@ -1,126 +1,86 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Event 1: Kickoff FCAJ Buildrathon 2026"
+date: 2026-09-26
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+<!-- {{% notice warning %}}
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+{{% /notice %}} -->
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Event Report: “Kickoff FCAJ Buildrathon 2026 Season 01”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Kickstart the FCAJ Buildrathon 2026 Season 01 journey – a 6-month practical playground for the AI & Cloud community in Vietnam.
+- Connect a community of over 300 builders, interns, and industry experts from AWS and CMC Global.
+- Disseminate rules, orient the project roadmap, and share practical experiences through the Talkshow "The Thinking Behind Building The Bot".
+- Create career opportunities (Fast-track) and 1-1 networking sessions with the Human Resources (HR) team from enterprise partners.
 
-### Speakers
+### Organizers & Guest Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **AWS Study Group:** The host organization, promoting the "Pay It Forward" community spirit.
+- **AWS Vietnam:** Venue and tech-space sponsor at Bitexco Tower.
+- **CMC Global:** Co-organizing partner, sharing expertise on AI Agents and recruitment opportunities.
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Talkshow: "The Thinking Behind Building The Bot"
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+This was the technical highlight of the event, focusing on how to design and develop AI Agents:
+- **Architecture Thinking:** Guidelines on laying a proper architectural foundation for a Bot right from the very first lines of code.
+- **Optimizing AI Agents:** Discussions on real-world challenges when deploying AI Agents in an enterprise environment – data handling, cost optimization, and performance tuning.
+- **Test Deconstruction:** Experts directly "dissected" tough assessment tests, helping participants learn from real-world troubleshooting scenarios.
 
-#### Transitioning to modern application architecture – Microservices
+#### The Buildrathon 2026 Journey
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- Officially announced the 6-month roadmap for Season 01.
+- Inspired and motivated participating teams to create highly applicable and quality AI/Cloud products.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Career Fast-track
 
-#### Domain-Driven Design (DDD)
+- Networking activities to expand job opportunities.
+- Direct 1-1 interactions with the HR team from CMC Global to understand market demands and career development paths in the AI/Cloud industry.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### Key Learnings
 
-#### Event-Driven Architecture
+#### Product Thinking
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+- **Practical Mindset:** Understood that building a Bot is not just about making API calls, but designing a scalable architecture that solves actual business problems.
+- **Optimization:** Clearly recognized the difference between a personal project and a production-grade AI Agent (which requires strict attention to security, cost management, and latency).
 
-#### Compute Evolution
+#### Skills & Career Orientation
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+- **Problem-solving:** Learned approaches to solving complex technical issues through the experts' test deconstruction session.
+- **Career Path:** Gained a clearer understanding of the specific skills that top tech companies (like CMC Global) are currently looking for in Cloud & AI candidates.
 
-#### Amazon Q Developer
+### Application to Work (Internship Project)
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Apply System Thinking:** When starting the FCAJ final capstone project, I will heavily focus on mapping out the AWS infrastructure architecture before writing any code.
+- **AI Agent Deployment:** Apply tips from the talkshow to design the team's Bot, ensuring a flexible and cost-optimized architecture.
+- **Teamwork:** Promote the "Pay It Forward" spirit by sharing the knowledge gained from the event with team members who couldn't attend.
 
-### Key Takeaways
+### Personal Experience at the Event
 
-#### Design Mindset
+Attending the Kickoff event at the AWS Office (Bitexco) was a true technological "cauldron", bringing me immense excitement and motivation for the upcoming internship journey. Here are some standout experiences:
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+#### Dynamic and Enthusiastic Atmosphere
+- The presence of over 300 fellow builders created an incredibly explosive networking space. Being inside the AWS Vietnam office was a truly inspiring experience for someone newly stepping into the Cloud industry like me.
 
-#### Technical Architecture
+#### Practical Learning via the Talkshow
+- The discussion session "The Thinking Behind Building The Bot" with experts from CMC Global was extremely high-quality. Instead of purely theoretical concepts, I witnessed how they decoded difficult technical tests, which helped me understand the mindset of "senior" engineers when facing system issues.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+#### Excellent Networking Opportunities
+- The event wasn't just about technical skills; it also helped me expand my professional network. Chatting directly with Mentors and the CMC Global HR team helped me clearly outline my career path after graduation.
 
-#### Modernization Strategy
+#### Key Takeaways
+- The next 6 months of the Buildrathon will be highly challenging but also a "golden" opportunity for hands-on collision with real projects.
+- To build a robust AI/Cloud product, technology and tools are only half the battle; the other half lies in an Architecture Mindset and solid teamwork capabilities.
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+#### Event Photos
+<img width="2568" height="1926" alt="image" src="https://github.com/user-attachments/assets/2e970085-cb33-4065-b42f-300ef263dbfb" />
 
-### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Overall, the Kickoff event boosted my energy by 200%. The event went far beyond a standard rule-briefing session, delivering invaluable practical knowledge and a readiness to conquer all challenges in the upcoming FCAJ Buildrathon 2026 season.
