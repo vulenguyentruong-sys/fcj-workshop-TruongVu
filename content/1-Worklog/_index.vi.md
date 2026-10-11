@@ -1,23 +1,16 @@
 ---
 title: "Nhật ký công việc"
-date: 2024-01-01
+date: 2026-09-14
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực tập, thực hành lab và triển khai dự án trong khuôn khổ chương trình First Cloud AI Journey (FCAJ). Báo cáo được thực hiện trong suốt quá trình thực tập với nội dung chi tiết từng tuần như sau:
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
+**Tuần 1:** [Làm quen quy định FCAJ, tạo tài khoản AWS, hoàn thành 5 task Explore AWS và nhận 100$ Credit](1.1-week1/)
 
-
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
-
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
-
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 2:** [Thực hành tối ưu hóa chi phí EC2 bằng Lambda, tích hợp Slack Webhooks và tham gia Kickoff Buildrathon](1.2-week2/)
 
 **Tuần 3:** [Làm công việc B...](1.3-week3/)
 
