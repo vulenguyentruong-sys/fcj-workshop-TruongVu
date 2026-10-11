@@ -17,12 +17,12 @@ pre: " <b> 1.2. </b> "
 ### Các công việc đã làm trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |:---:|---|:---:|:---:|---|
-| 2 | - Truy cập nền tảng `cloudjourney.awsstudygroup.com`. <br>&emsp; - Đọc tài liệu chuẩn bị cho bài lab tối ưu hóa chi phí EC2 bằng Lambda. <br>&emsp; - Hiểu quy trình tạo môi trường mạng cơ sở (VPC) và tường lửa ảo (Security Group). | 21/09/2026 | 21/09/2026 | [000022.awsstudygroup.com - Preparation steps](https://000022.awsstudygroup.com/2-prerequisite/) |
-| 3 | - Thực hành Tự động hóa (Automation): <br>&emsp; + Khởi tạo VPC và Security Group theo hướng dẫn. <br>&emsp; + Khởi tạo EC2 instance làm mục tiêu (target) để test tính năng start/stop. | 22/09/2026 | 22/09/2026 | Bài Lab 000022 - Create VPC & EC2 |
-| 4 | - Thực hành Tích hợp (Integration): <br>&emsp; + Cấu hình Slack Incoming Webhooks. <br>&emsp; + Viết và cấp quyền (IAM Role) cho hàm AWS Lambda để gửi thông báo trạng thái EC2 về kênh Slack. | 23/09/2026 | 23/09/2026 | Bài Lab 000022 - Lambda & Slack |
-| 5 | - Thực hiện kiểm thử (Testing) luồng tự động bật/tắt EC2 và gửi thông báo. <br>&emsp; - Hoàn thành bài lab và dọn dẹp sạch sẽ toàn bộ tài nguyên (Clean up resources) để tránh phí phát sinh. | 24/09/2026 | 24/09/2026 | Bài Lab 000022 - Testing & Cleanup |
+| 2 | - Truy cập nền tảng `cloudjourney.awsstudygroup.com`. <br>&emsp; - Đọc tài liệu chuẩn bị cho bài lab tối ưu hóa chi phí EC2 bằng Lambda. <br>&emsp; - Hiểu quy trình tạo môi trường mạng cơ sở (VPC) và tường lửa ảo (Security Group). | 21/09/2026 | 21/09/2026 | [000022 Lab - Preparation steps](https://000022.awsstudygroup.com/2-prerequiste/) |
+| 3 | - **Thực hành Tự động hóa (Automation):** <br>&emsp; + Khởi tạo VPC và Security Group theo hướng dẫn. <br>&emsp; + Khởi tạo EC2 instance làm mục tiêu (target) để test tính năng start/stop. | 22/09/2026 | 22/09/2026 | [000022 Lab - Preparation steps](https://000022.awsstudygroup.com/2-prerequiste/) |
+| 4 | - **Thực hành Tích hợp (Integration):** <br>&emsp; + Cấu hình Slack Incoming Webhooks. <br>&emsp; + Viết và cấp quyền (IAM Role) cho hàm AWS Lambda để gửi thông báo trạng thái EC2 về kênh Slack. | 23/09/2026 | 23/09/2026 | [000022 Lab - Create Role for Lambda](https://000022.awsstudygroup.com/4-createroleforlambda/) |
+| 5 | - Thực hiện kiểm thử (Testing) luồng tự động bật/tắt EC2 và gửi thông báo. <br>&emsp; - Hoàn thành bài lab và dọn dẹp sạch sẽ toàn bộ tài nguyên (Clean up resources) để tránh phí phát sinh. | 24/09/2026 | 24/09/2026 | [000022 Lab - Testing results](https://000022.awsstudygroup.com/6-testingresults/) <br> [000022 Lab - Clean up](https://000022.awsstudygroup.com/7-cleanup/) |
 | 6 | - Nghiên cứu tài liệu lý thuyết về Vận hành (Operate) và Bảo mật (Security). <br>&emsp; - Tìm hiểu về Amazon Cloudwatch, Resource Groups, AWS System Manager và IAM Permission Boundary. | 25/09/2026 | 25/09/2026 | [The First Cloud Journey - Optimizing the system](https://cloudjourney.awsstudygroup.com/3-optimize/) |
-| 7 | - Sự kiện Offline: Tham gia buổi "FCAJ Buildrathon 2026 Season 1 - Kickstart !" tại Văn phòng AWS Bitexco. <br>&emsp; - Lắng nghe phổ biến thể lệ, gặp gỡ giao lưu trực tiếp với các team và Mentor. | 26/09/2026 | 26/09/2026 | Sự kiện Kickoff - Bitexco |
+| 7 | - **Sự kiện Offline:** Tham gia buổi "FCAJ Buildrathon 2026 Season 1 - Kickstart !" tại Văn phòng AWS Bitexco. <br>&emsp; - Lắng nghe phổ biến thể lệ, gặp gỡ giao lưu trực tiếp với các team và Mentor. | 26/09/2026 | 26/09/2026 | Sự kiện Kickoff - Bitexco |
 
 ### Kết quả đạt được tuần 2:
 
