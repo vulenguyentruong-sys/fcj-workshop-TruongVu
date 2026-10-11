@@ -80,6 +80,6 @@ Sự kiện Kickoff tại văn phòng AWS (Bitexco) là một "chảo lửa" cô
 - Để xây dựng một sản phẩm AI/Cloud tốt, công nghệ (Tools) chỉ là một nửa, nửa còn lại nằm ở tư duy kiến trúc (Architecture Mindset) và khả năng làm việc nhóm.
 
 #### Một số hình ảnh khi tham gia sự kiện
-*(Chèn hình ảnh check-in tại sự kiện, sân khấu talkshow, hoặc chụp cùng team tại văn phòng AWS Bitexco vào đây)*
+<img width="2568" height="1926" alt="image" src="https://github.com/user-attachments/assets/af496e32-9ace-46e2-8efb-703c872799f3" />
 
 > Tổng thể, buổi Kickoff đã tiếp thêm cho tôi 200% năng lượng. Sự kiện đã vượt ra khỏi khuôn khổ một buổi phổ biến luật chơi thông thường, mang đến những kiến thức thực chiến đắt giá và một tinh thần sẵn sàng chinh phục mọi thử thách trong mùa giải FCAJ Buildrathon 2026.v
