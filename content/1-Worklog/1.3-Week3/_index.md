@@ -1,57 +1,35 @@
 ---
 title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 3 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Master the knowledge of Operations and System Monitoring on the AWS platform.
+- Practice deploying a visual monitoring solution by integrating Grafana with Amazon Cloudwatch.
+- Understand the security authorization process (IAM Role & User) for third-party services accessing AWS resources.
+- Participate in the technology and networking event series (AWS Cloud & AI Day Watch Party & Fireside Chat with CTO Werner Vogels).
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks carried out this week:
+| Day | Task | Start Date | Completion Date | Reference Material |
+|:---:|---|:---:|:---:|---|
+| Mon | - Research theoretical documents on System Optimization methods (Operational Excellence, Security, Reliability, Performance, Cost Optimization). <br>&emsp; - Plan for the System Monitor lab with Grafana. | 09/28/2026 | 09/28/2026 | [The First Cloud Journey - Optimizing the system](https://cloudjourney.awsstudygroup.com/3-optimize/) |
+| Tue | - **Network Architecture & Compute Practice:** <br>&emsp; + Create a new VPC and Subnet. <br>&emsp; + Configure Security Group to allow access. <br>&emsp; + Provision a Linux EC2 Instance as the monitoring server. | 09/29/2026 | 09/29/2026 | [Lab - Preparatory steps (Step 1-3)](https://000029.awsstudygroup.com/2-prerequiste/) |
+| Wed | - **Security (IAM) Practice:** <br>&emsp; + Create an IAM User and generate an Access Key. <br>&emsp; + Create an IAM Role with the necessary permissions to read metrics from Cloudwatch. <br>&emsp; + Assign the newly created IAM Role to the Linux EC2 Instance. | 09/30/2026 | 09/30/2026 | [Lab - Preparatory steps (Step 4-6)](https://000029.awsstudygroup.com/2-prerequiste/) |
+| Thu | - **Deployment & Integration Practice:** <br>&emsp; + Install Grafana on the Linux EC2 Instance. <br>&emsp; + Connect the Data Source between Grafana and Amazon Cloudwatch. <br>&emsp; + Design a Dashboard to visualize system performance metrics. | 10/01/2026 | 10/01/2026 | [Lab - Installing & Monitoring with Grafana](https://000029.awsstudygroup.com/) |
+| Fri | - Safely clean up all provisioned resources (EC2, VPC, IAM, Access Key) to avoid unexpected costs. <br>&emsp; - Finalize event reports for the Watch Party (Sept 29) and Fireside Chat (Oct 2). | 10/02/2026 | 10/02/2026 | [Lab - Clean up resources](https://000029.awsstudygroup.com/5-cleanup/) |
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+&emsp;◉ Monday - Wednesday:
+<br>&emsp;&emsp;○ Understood the 5 pillars of system optimization (Well-Architected Framework) according to enterprise standards.
+<br>&emsp;&emsp;○ Proficient in provisioning basic network infrastructure (VPC/Subnet/Security Group) to isolate the lab environment.
+<br>&emsp;&emsp;○ Mastered identity and access management with IAM (User, Role, Access Key), ensuring the principle of least privilege.
 
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+&emsp;◉ Thursday - Friday:
+<br>&emsp;&emsp;○ Successfully set up an independent Monitoring System using Grafana, pulling data directly from Amazon Cloudwatch.
+<br>&emsp;&emsp;○ Learned how to visually monitor system health (Performance), preparing for monitoring actual projects in the future.
+<br>&emsp;&emsp;○ Ensured the account remained completely "clean" (zero-cost) thanks to a thorough resource cleanup process.
