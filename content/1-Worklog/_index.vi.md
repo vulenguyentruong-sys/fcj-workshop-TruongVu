@@ -14,7 +14,7 @@ Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực t�
 
 **Tuần 3:** [Thực hành giám sát hệ thống với Grafana & Cloudwatch, cấu hình IAM và chuỗi sự kiện AWS](./1.3-Week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 4:** [Thực hành quản lý tài nguyên với Tag, tự động hóa Systems Manager và chốt đề tài dự án](./1.4-Week4/)
 
 **Tuần 5:** [Làm công việc D...](1.5-week5/)
 
