@@ -25,11 +25,11 @@ pre: " <b> 1.3. </b> "
 ### Week 3 Achievements:
 
 &emsp;◉ Monday - Wednesday:
-<br>&emsp;&emsp;○ Understood the 5 pillars of system optimization (Well-Architected Framework) according to enterprise standards.
-<br>&emsp;&emsp;○ Proficient in provisioning basic network infrastructure (VPC/Subnet/Security Group) to isolate the lab environment.
-<br>&emsp;&emsp;○ Mastered identity and access management with IAM (User, Role, Access Key), ensuring the principle of least privilege.
+<br>&emsp;&emsp;○ System Architecture Mindset: Deeply researched the pillars of the AWS Well-Architected Framework (especially Operational Excellence and Security), thereby forming an enterprise-standard infrastructure design mindset: ensuring high performance while optimizing costs.
+<br>&emsp;&emsp;○ Network & Security Deployment: Successfully configured the baseline network (VPC, Subnets) and virtual firewalls (Security Groups) for EC2 servers. Through this, gained a clear understanding of network traffic flows and how to isolate resources to prevent unauthorized access.
+<br>&emsp;&emsp;○ Identity & Access Management (IAM): Mastered the process of provisioning IAM Users, generating Access Keys, and properly attaching IAM Roles to EC2. Applying the "least privilege" principle ensures absolute security when third-party systems make API calls to AWS.
 
 &emsp;◉ Thursday - Friday:
-<br>&emsp;&emsp;○ Successfully set up a visual Monitoring System using Grafana, pulling data directly from Amazon Cloudwatch.
-<br>&emsp;&emsp;○ Maintained strict discipline in resource cleanup, ensuring the account remained absolutely safe at $0 cost.
-<br>&emsp;&emsp;○ Fully participated in the Fireside Chat with Dr. Werner Vogels (Amazon Global CTO), absorbing the "Now Go Build" philosophy, expanding knowledge on distributed system design, and significantly enhancing networking skills.
+<br>&emsp;&emsp;○ Mastering System Monitoring: Successfully installed and configured Grafana on a Linux EC2 instance, seamlessly integrating it with Amazon Cloudwatch as a Data Source. Designed a visual Dashboard to monitor server health metrics (CPU, Network, Disk) in real-time.
+<br>&emsp;&emsp;○ Cost Management Discipline (FinOps): Strictly adhered to the resource cleanup process (Terminating EC2, Deleting VPC/IAM). This thorough review ensured the account generated zero hidden costs ($0 cost) after the lab.
+<br>&emsp;&emsp;○ Mindset Growth & Networking: Gained invaluable insights from the live Fireside Chat with Dr. Werner Vogels (Amazon Global CTO). Absorbed the "Now Go Build" philosophy and the "design for failure" mindset, while significantly expanding my professional network within the AWS expert community in Vietnam.
