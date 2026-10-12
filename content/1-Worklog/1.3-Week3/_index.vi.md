@@ -1,59 +1,35 @@
 ---
 title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+date: 2026-09-28
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 3:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nắm vững kiến thức về Vận hành (Operate) và Giám sát hệ thống (Monitoring) trên nền tảng AWS.
+- Thực hành triển khai giải pháp giám sát trực quan bằng cách tích hợp Grafana với Amazon Cloudwatch.
+- Hiểu rõ quy trình cấp quyền bảo mật (IAM Role & User) cho các dịch vụ bên thứ ba truy cập tài nguyên AWS.
+- Tham gia chuỗi sự kiện công nghệ và networking (AWS Cloud & AI Day Watch Party & Fireside Chat với CTO Werner Vogels).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Các công việc đã làm trong tuần này:
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|:---:|---|:---:|:---:|---|
+| 2 | - Nghiên cứu tài liệu tổng quan về các phương pháp Tối ưu hóa hệ thống (Operational Excellence, Security, Reliability, Performance, Cost Optimization). <br>&emsp; - Lập kế hoạch cho bài lab System Monitor với Grafana. | 28/09/2026 | 28/09/2026 | [The First Cloud Journey - Optimizing the system](https://cloudjourney.awsstudygroup.com/3-optimize/) |
+| 3 | - **Thực hành Kiến trúc Mạng & Compute:** <br>&emsp; + Tạo VPC và Subnet mới. <br>&emsp; + Cấu hình Security Group cho phép truy cập. <br>&emsp; + Khởi tạo một Linux EC2 Instance làm máy chủ giám sát. | 29/09/2026 | 29/09/2026 | [000029 Lab - Preparatory steps (Step 1-3)](https://000029.awsstudygroup.com/2-prerequiste/) |
+| 4 | - **Thực hành Bảo mật (IAM):** <br>&emsp; + Khởi tạo IAM User và tạo Access Key. <br>&emsp; + Tạo IAM Role với các quyền cần thiết để đọc metrics từ Cloudwatch. <br>&emsp; + Gán (Assign) IAM Role vừa tạo cho Linux EC2 Instance. | 30/09/2026 | 30/09/2026 | [000029 Lab - Preparatory steps (Step 4-6)](https://000029.awsstudygroup.com/2-prerequiste/) |
+| 5 | - **Thực hành Triển khai & Tích hợp:** <br>&emsp; + Cài đặt Grafana lên Linux EC2 Instance. <br>&emsp; + Kết nối Data Source giữa Grafana và Amazon Cloudwatch. <br>&emsp; + Thiết kế Dashboard để trực quan hóa các chỉ số hiệu suất hệ thống. | 01/10/2026 | 01/10/2026 | [000029 Lab - Installing & Monitoring with Grafana](https://000029.awsstudygroup.com/) |
+| 6 | - Dọn dẹp an toàn toàn bộ tài nguyên đã khởi tạo (EC2, VPC, IAM, Access Key) để tránh phát sinh chi phí ngoài ý muốn. <br>&emsp; - Hoàn thiện các bài báo cáo sự kiện Watch Party (29/09) và Fireside Chat (02/10). | 02/10/2026 | 02/10/2026 | [000029 Lab - Clean up resources](https://000029.awsstudygroup.com/) |
 
 ### Kết quả đạt được tuần 3:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+&emsp;◉ Thứ 2 - Thứ 4:
+<br>&emsp;&emsp;○ Hiểu được 5 trụ cột tối ưu hóa hệ thống (Well-Architected Framework) theo tiêu chuẩn enterprise.
+<br>&emsp;&emsp;○ Thành thạo việc khởi tạo hạ tầng mạng cơ bản (VPC/Subnet/Security Group) để cô lập môi trường thực hành.
+<br>&emsp;&emsp;○ Nắm vững cách quản lý danh tính và quyền truy cập với IAM (User, Role, Access Key), đảm bảo nguyên tắc đặc quyền tối thiểu (least privilege).
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+&emsp;◉ Thứ 5 - Thứ 6:
+<br>&emsp;&emsp;○ Thiết lập thành công một hệ thống giám sát (Monitoring System) độc lập sử dụng Grafana, lấy dữ liệu trực tiếp từ Amazon Cloudwatch.
+<br>&emsp;&emsp;○ Biết cách theo dõi sức khỏe hệ thống (Performance) một cách trực quan, chuẩn bị sẵn sàng cho việc giám sát dự án thực tế sau này.
+<br>&emsp;&emsp;○ Đảm bảo tài khoản hoàn toàn "sạch sẽ" (zero-cost) nhờ quy trình dọn dẹp tài nguyên triệt để.
