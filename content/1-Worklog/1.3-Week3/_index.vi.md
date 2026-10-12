@@ -25,11 +25,11 @@ pre: " <b> 1.3. </b> "
 ### Kết quả đạt được tuần 3:
 
 &emsp;◉ Thứ 2 - Thứ 4:
-<br>&emsp;&emsp;○ Hiểu được 5 trụ cột tối ưu hóa hệ thống (Well-Architected Framework) theo tiêu chuẩn enterprise.
-<br>&emsp;&emsp;○ Thành thạo việc khởi tạo hạ tầng mạng cơ bản (VPC/Subnet/Security Group) để cô lập môi trường thực hành.
-<br>&emsp;&emsp;○ Nắm vững cách quản lý danh tính và quyền truy cập với IAM (User, Role, Access Key), đảm bảo nguyên tắc đặc quyền tối thiểu (least privilege).
+<br>&emsp;&emsp;○ Tư duy kiến trúc hệ thống: Nghiên cứu sâu về các trụ cột của AWS Well-Architected Framework (đặc biệt là Operational Excellence và Security), từ đó hình thành tư duy thiết kế hạ tầng chuẩn doanh nghiệp: vừa đảm bảo hiệu suất cao, vừa tối ưu hóa chi phí.
+<br>&emsp;&emsp;○ Triển khai mạng & bảo mật: Tự tay cấu hình thành công mạng cơ sở (VPC, Subnet) và tường lửa ảo (Security Group) cho máy chủ EC2. Qua đó, hiểu rõ luồng giao tiếp mạng và cách cô lập tài nguyên để ngăn chặn các truy cập trái phép.
+<br>&emsp;&emsp;○ Quản trị quyền truy cập (IAM): Nắm vững quy trình khởi tạo IAM User, Access Key và đặc biệt là cách gắn IAM Role cho EC2. Việc áp dụng đúng nguyên tắc "đặc quyền tối thiểu" (least privilege) giúp đảm bảo an toàn tuyệt đối khi hệ thống bên ngoài gọi API vào AWS.
 
 &emsp;◉ Thứ 5 - Thứ 6:
-<br>&emsp;&emsp;○ Thiết lập thành công hệ thống giám sát (Monitoring System) trực quan bằng Grafana, lấy dữ liệu trực tiếp từ Amazon Cloudwatch.
-<br>&emsp;&emsp;○ Duy trì kỷ luật dọn dẹp tài nguyên (Clean up) triệt để, đảm bảo tài khoản an toàn tuyệt đối ở mức chi phí $0.
-<br>&emsp;&emsp;○ Tham gia trọn vẹn buổi Fireside Chat cùng TS. Werner Vogels (CTO Amazon), tiếp thu triết lý "Now Go Build", mở rộng tư duy thiết kế hệ thống phân tán và phát triển mạnh mẽ kỹ năng networking.
+<br>&emsp;&emsp;○ Làm chủ hệ thống giám sát (Monitoring): Cài đặt và cấu hình thành công Grafana trên Linux EC2, kết nối trơn tru với Amazon Cloudwatch. Tự thiết kế Dashboard trực quan để theo dõi các chỉ số sức khỏe của máy chủ (CPU, Network, Disk) theo thời gian thực.
+<br>&emsp;&emsp;○ Kỷ luật quản trị chi phí (FinOps): Tuân thủ nghiêm ngặt quy trình dọn dẹp tài nguyên (Terminate EC2, Delete VPC/IAM). Việc rà soát kỹ lưỡng giúp tài khoản đảm bảo không phát sinh bất kỳ chi phí ngầm nào ($0 cost) sau khi làm lab.
+<br>&emsp;&emsp;○ Phát triển tư duy & Networking: Gặt hái được những góc nhìn vô giá từ buổi trò chuyện trực tiếp với Tiến sĩ Werner Vogels (CTO Amazon). Lĩnh hội triết lý "Now Go Build" và tư duy "thiết kế cho sự thất bại" (design for failure), đồng thời mở rộng mạng lưới kết nối với cộng đồng chuyên gia AWS tại Việt Nam.
