@@ -20,7 +20,7 @@ pre: " <b> 1.3. </b> "
 | Tue | - **Network Architecture & Compute Practice:** <br>&emsp; + Create a new VPC and Subnet. <br>&emsp; + Configure Security Group to allow access. <br>&emsp; + Provision a Linux EC2 Instance as the monitoring server. | 09/29/2026 | 09/29/2026 | [Lab - Preparatory steps (Step 1-3)](https://000029.awsstudygroup.com/2-prerequiste/) |
 | Wed | - **Security (IAM) Practice:** <br>&emsp; + Create an IAM User and generate an Access Key. <br>&emsp; + Create an IAM Role with the necessary permissions to read metrics from Cloudwatch. <br>&emsp; + Assign the newly created IAM Role to the Linux EC2 Instance. | 09/30/2026 | 09/30/2026 | [Lab - Preparatory steps (Step 4-6)](https://000029.awsstudygroup.com/2-prerequiste/) |
 | Thu | - **Deployment & Integration Practice:** <br>&emsp; + Install Grafana on the Linux EC2 Instance. <br>&emsp; + Connect the Data Source between Grafana and Amazon Cloudwatch. <br>&emsp; + Design a Dashboard to visualize system performance metrics. | 10/01/2026 | 10/01/2026 | [Lab - Installing & Monitoring with Grafana](https://000029.awsstudygroup.com/) |
-| Fri | - Safely clean up all provisioned resources (EC2, VPC, IAM, Access Key) to avoid unexpected costs. <br>&emsp; - Finalize event reports for the Watch Party (Sept 29) and Fireside Chat (Oct 2). | 10/02/2026 | 10/02/2026 | [Lab - Clean up resources](https://000029.awsstudygroup.com/5-cleanup/) |
+| Fri | - Safely clean up all provisioned lab resources (EC2, VPC, IAM, Access Key). <br>&emsp; - **Attend Offline Event:** Present at the AWS Bitexco office for the Fireside Chat with Dr. Werner Vogels (Global CTO of Amazon). <br>&emsp; - Finalize event reports for the Watch Party and Fireside Chat. | 10/02/2026 | 10/02/2026 | [Lab - Clean up resources](https://000029.awsstudygroup.com/5-cleanup/) <br> [Fireside Chat Report](../4-EventParticipated/4.3-Event3/) |
 
 ### Week 3 Achievements:
 
@@ -30,6 +30,6 @@ pre: " <b> 1.3. </b> "
 <br>&emsp;&emsp;○ Mastered identity and access management with IAM (User, Role, Access Key), ensuring the principle of least privilege.
 
 &emsp;◉ Thursday - Friday:
-<br>&emsp;&emsp;○ Successfully set up an independent Monitoring System using Grafana, pulling data directly from Amazon Cloudwatch.
-<br>&emsp;&emsp;○ Learned how to visually monitor system health (Performance), preparing for monitoring actual projects in the future.
-<br>&emsp;&emsp;○ Ensured the account remained completely "clean" (zero-cost) thanks to a thorough resource cleanup process.
+<br>&emsp;&emsp;○ Successfully set up a visual Monitoring System using Grafana, pulling data directly from Amazon Cloudwatch.
+<br>&emsp;&emsp;○ Maintained strict discipline in resource cleanup, ensuring the account remained absolutely safe at $0 cost.
+<br>&emsp;&emsp;○ Fully participated in the Fireside Chat with Dr. Werner Vogels (Amazon Global CTO), absorbing the "Now Go Build" philosophy, expanding knowledge on distributed system design, and significantly enhancing networking skills.
