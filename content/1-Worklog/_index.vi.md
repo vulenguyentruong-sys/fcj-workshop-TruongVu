@@ -12,7 +12,7 @@ Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực t�
 
 **Tuần 2:** [Thực hành tối ưu hóa chi phí EC2 bằng Lambda, tích hợp Slack Webhooks và tham gia Kickoff Buildrathon](./1.2-Week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 3:** [Thực hành giám sát hệ thống với Grafana & Cloudwatch, cấu hình IAM và chuỗi sự kiện AWS](./1.3-Week3/)
 
 **Tuần 4:** [Làm công việc C...](1.4-week4/)
 
