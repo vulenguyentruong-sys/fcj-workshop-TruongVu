@@ -74,4 +74,5 @@ The technical Q&A at the end of the session with Mr. Khoa Kieu and Mr. Nghi Danh
 Every event I attend reinforces the need to proactively connect, confidently network, and continually push myself to learn more. A sincere thank you to the speakers and organizers for creating such a fantastic knowledge-sharing playground, making the "journey to the cloud" for students and young builders incredibly engaging and motivating.
 
 #### Event Photos
-*(Insert Meetup check-in photos, slides from favorite sessions, or group photos with the speakers here)*
+<img width="2560" height="1920" alt="image" src="https://github.com/user-attachments/assets/3c310b3a-c23e-453a-b6d9-260a2c258b53" />
+<img width="2568" height="1926" alt="image" src="https://github.com/user-attachments/assets/5da7d815-80b0-483f-95be-56ddf37a78ce" />
