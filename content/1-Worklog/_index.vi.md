@@ -16,11 +16,11 @@ Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực t�
 
 **Tuần 4:** [Thực hành quản lý tài nguyên với Tag, tự động hóa Systems Manager và chốt đề tài dự án](./1.4-Week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Bảo mật EC2 với SSM Session Manager, tự động hóa FinOps bằng Lambda và tích hợp Slack](./1.5-Week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Quản lý danh tính tập trung với AWS IAM Identity Center và thiết lập bảo mật nhóm](./1.6-Week6/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 7:** [Thực hành DynamoDB, CloudFront, CloudFormation và triển khai kiến trúc Serverless cho dự án](./1.7-Week7/)
 
 **Tuần 8:** [Làm công việc H...](1.8-week8/)
 
