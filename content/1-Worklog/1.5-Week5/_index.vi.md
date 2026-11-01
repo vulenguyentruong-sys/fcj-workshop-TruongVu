@@ -12,31 +12,21 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu tuần 5:
 
-- Giải quyết triệt để rủi ro bảo mật liên quan đến việc mở Port 22 (SSH) trên Internet.
-- Thiết lập phương thức truy cập máy chủ (EC2) an toàn tuyệt đối mà không cần dùng đến SSH Key (`.pem`).
-- Tự động hóa quy trình tắt EC2 sau giờ làm việc để ngăn chặn tình trạng cạn kiệt AWS Credit ("cháy ví") thông qua AWS Lambda và EventBridge.
-- Cấu hình thông báo tự động (Alert) qua Slack giúp team giám sát chi phí dễ dàng hơn.
+Tuần này, mình tập trung vào việc giải quyết triệt để 2 vấn đề lớn nhất khi vận hành hệ thống EC2:
+- Loại bỏ hoàn toàn lỗ hổng bảo mật khi mở Port 22 (SSH) và dẹp bỏ cơn ác mộng mang tên chia sẻ file `.pem` trong team.
+- Chấm dứt tình trạng "cháy ví" (cạn kiệt AWS Credit) do team hay quên tắt EC2 sau khi làm lab.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | :---: | --- | :---: | :---: | --- |
-| 2 | - **Nghiên cứu rủi ro bảo mật:** <br>&emsp; + Đánh giá nguy cơ từ việc mở Inbound Rule Port 22 trên Security Group. <br>&emsp; + Phân tích bài toán khó khăn khi chia sẻ và quản lý SSH Key trong team. | 12/10/2026 | 12/10/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
-| 3 | - **Thực hành truy cập EC2 không cần Port 22:** <br>&emsp; + Xóa bỏ hoàn toàn Port 22 trên Security Group. <br>&emsp; + Cấu hình IAM Role `AmazonSSMManagedInstanceCore` cho EC2. <br>&emsp; + Sử dụng AWS Systems Manager (SSM) Session Manager để truy cập trực tiếp qua Console. | 13/10/2026 | 13/10/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
-| 4 | - **Giải bài toán FinOps (Quên tắt EC2):** <br>&emsp; + Lên danh sách các tài nguyên (EC2) cần tự động tắt. <br>&emsp; + Gắn tag `AutoStop = True` cho các EC2 này. | 14/10/2026 | 14/10/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
-| 5 | - **Thực hành thiết lập Lambda & EventBridge:** <br>&emsp; + Viết code Python (Boto3) cho AWS Lambda để tìm và tắt các EC2 có tag `AutoStop = True`. <br>&emsp; + Cấu hình Amazon EventBridge với lịch biểu cron (VD: 22h00 thứ Hai - thứ Sáu) để trigger hàm Lambda. | 15/10/2026 | 15/10/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
-| 6 | - **Tích hợp Webhook & Thông báo Slack:** <br>&emsp; + Khởi tạo Webhook API từ kênh Slack của dự án (aws-lambda-labs). <br>&emsp; + Cập nhật code Lambda để đẩy thông báo về Slack sau khi hoàn tất dọn dẹp. <br>&emsp; + Test thực tế và nghiệm thu toàn bộ luồng. | 16/10/2026 | 16/10/2026 | [AWS Study Group](https://cloudjourney.awsstudygroup.com/) |
+| 2 | - **Nghiên cứu rủi ro bảo mật:** <br>&emsp; + Đánh giá nguy cơ từ việc mở Inbound Rule Port 22. <br>&emsp; + Bàn luận cách quản lý SSH Key an toàn. | 12/10/2026 | 12/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
+| 3 | - **Bảo mật truy cập EC2:** <br>&emsp; + Xóa bỏ hoàn toàn Port 22 trên Security Group. <br>&emsp; + Hoàn thành lab truy cập an toàn bằng Session Manager. | 13/10/2026 | 13/10/2026 | [Remote Server Access with Systems Manager Session Manager](https://000058.awsfcaj.com) |
+| 4 | - **Giải quyết rủi ro tài chính (FinOps):** <br>&emsp; + Quy hoạch lại các EC2 cần tự động tắt. <br>&emsp; + Gắn tag `AutoStop = True` để đánh dấu tài nguyên. | 14/10/2026 | 14/10/2026 | [Resource Organization with Tags and Resource Groups](https://000027.awsfcaj.com) |
+| 5 | - **Thiết lập tự động hóa:** <br>&emsp; + Viết code Lambda (Boto3) quét và tắt các EC2 có tag `AutoStop`. <br>&emsp; + Hẹn giờ tắt máy (cron job) bằng Amazon EventBridge. | 15/10/2026 | 15/10/2026 | [Serverless Automation with AWS Lambda](https://000022.awsfcaj.com) |
+| 6 | - **Cấu hình cảnh báo Slack:** <br>&emsp; + Tạo Webhook từ kênh Slack của dự án. <br>&emsp; + Code thêm đoạn logic đẩy thông báo hoàn tất dọn dẹp về Slack. <br>&emsp; + Test end-to-end. | 16/10/2026 | 16/10/2026 | Cấu hình nội bộ team |
 
 ### Kết quả đạt được tuần 5:
 
-- **Về Bảo mật (Security Pillar):**
-  * Loại bỏ hoàn toàn lỗ hổng (Attack Surface) từ Port 22, ngăn chặn triệt để nguy cơ bị tấn công Brute-force từ bên ngoài.
-  * Tạm biệt cơn ác mộng quản lý và chia sẻ file `.pem`. Mọi thao tác cấp quyền/thu hồi quyền remote server giờ đây được thực hiện tập trung, chuẩn chỉ qua AWS IAM.
-  * Chuyển đổi thành công sang phương thức kết nối Outbound bảo mật bằng AWS Systems Manager (SSM) Session Manager, mọi thao tác dòng lệnh đều có thể được Audit (ghi log).
+- **Bảo vệ hệ thống thành công:** Bằng cách đóng cửa Port 22 và sử dụng AWS Systems Manager, mình đã chặn đứng được rủi ro bị hacker scan cổng và tấn công Brute-force. Team giờ đây không còn phải chật vật gửi file `.pem` cho nhau nữa, mọi thao tác phân quyền đều được quản lý tập trung và an toàn qua IAM Role.
 
-- **Về Tối ưu chi phí (Cost Optimization / FinOps):**
-  * Áp dụng tư duy quản lý tài nguyên linh hoạt bằng Tag (kế thừa kiến thức từ Tuần 4).
-  * Xây dựng thành công hệ thống tự động hóa Serverless (Lambda + EventBridge), xử lý dứt điểm "bệnh não cá vàng" quên tắt server cuối tuần.
-  * Đảm bảo nguồn tiền AWS Credit được bảo toàn tối đa, sẵn sàng cho các pha "đốt tiền" của mô hình AI trong giai đoạn dự án cuối.
-
-- **Về Vận hành (Operational Excellence):**
-  * Tích hợp thành công kênh thông báo tự động về Slack của team, giúp mọi thành viên đều nắm bắt được tình trạng hệ thống mà không cần đăng nhập vào AWS Console.
+- **Tối ưu chi phí (FinOps) triệt để:** Việc áp dụng Tagging Strategy kết hợp với kiến trúc Serverless (Lambda + EventBridge) đã giải quyết xong "căn bệnh hay quên" của cả nhóm. Các con EC2 dùng để test sẽ tự động tắt đúng giờ. Việc cấu hình thêm thông báo đẩy về Slack mỗi khi tắt máy thành công giúp mọi người trong team đều có thể theo dõi chi phí một cách cực kỳ minh bạch và an tâm ngủ ngon mỗi tối.
