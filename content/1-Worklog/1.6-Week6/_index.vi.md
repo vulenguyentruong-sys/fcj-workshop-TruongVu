@@ -20,9 +20,9 @@ pre: " <b> 1.6. </b> "
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | :---: | --- | :---: | :---: | --- |
 | 2 | - Khởi động dự án nhóm: <br>&emsp; + Họp nhóm thống nhất luồng công việc trên AWS. <br>&emsp; + Nghiên cứu tổng quan về AWS IAM Identity Center và kiến trúc quản lý nhiều tài khoản. | 19/10/2026 | 19/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
-| 3 | - Thiết lập danh tính trung tâm: <br>&emsp; + Cấu hình AWS IAM Identity Center. <br>&emsp; + Tạo Users và phân bổ vào các Groups tương ứng với vai trò của từng thành viên trong nhóm (VD: AI_Dev, Backend, Admin). | 20/10/2026 | 20/10/2026 | Bài lab 000012: IAM Identity Center |
-| 4 | - Cấu hình chính sách bảo mật: <br>&emsp; + Tìm hiểu và thiết lập Customer Managed Policies. <br>&emsp; + Cấp quyền truy cập dựa trên nguyên tắc đặc quyền tối thiểu (Least Privilege) cho từng nhóm. | 21/10/2026 | 21/10/2026 | Bài lab 000012: IAM Identity Center |
-| 5 | - Nâng cao bảo mật & Tự động hóa: <br>&emsp; + Nghiên cứu cơ chế Time-based access control (kiểm soát truy cập theo thời gian). <br>&emsp; + Làm quen với IAM Identity Center Identity Store APIs thông qua AWS CLI. | 22/10/2026 | 22/10/2026 | Bài lab 000012: IAM Identity Center |
+| 3 | - Thiết lập danh tính trung tâm: <br>&emsp; + Cấu hình AWS IAM Identity Center. <br>&emsp; + Tạo Users và phân bổ vào các Groups tương ứng với vai trò của từng thành viên trong nhóm (VD: AI_Dev, Backend, Admin). | 20/10/2026 | 20/10/2026 | [IAM Identity Center](https://000012.awsfcaj.com/) |
+| 4 | - Cấu hình chính sách bảo mật: <br>&emsp; + Tìm hiểu và thiết lập Customer Managed Policies. <br>&emsp; + Cấp quyền truy cập dựa trên nguyên tắc đặc quyền tối thiểu (Least Privilege) cho từng nhóm. | 21/10/2026 | 21/10/2026 | [IAM Identity Center](https://000012.awsfcaj.com/) |
+| 5 | - Nâng cao bảo mật & Tự động hóa: <br>&emsp; + Nghiên cứu cơ chế Time-based access control (kiểm soát truy cập theo thời gian). <br>&emsp; + Làm quen với IAM Identity Center Identity Store APIs thông qua AWS CLI. | 22/10/2026 | 22/10/2026 | [IAM Identity Center](https://000012.awsfcaj.com/) |
 | 6 | - Kiểm thử & Quản trị chi phí (FinOps): <br>&emsp; + Phối hợp cùng nhóm test chéo quyền truy cập của các tài khoản. <br>&emsp; + Thực hiện Resource Cleanup (dọn dẹp tài nguyên) cẩn thận theo cảnh báo của bài Lab để tránh cạn kiệt AWS Credit của team. | 23/10/2026 | 23/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
 
 ### Kết quả đạt được tuần 6:
