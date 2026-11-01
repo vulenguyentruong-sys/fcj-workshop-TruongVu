@@ -1,58 +1,41 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-10-19
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+<!-- {{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}} -->
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu và triển khai AWS IAM Identity Center để quản lý định danh tập trung cho tổ chức/nhóm dự án.
+- Áp dụng nguyên tắc đặc quyền tối thiểu (Least Privilege) để cấp quyền truy cập an toàn cho từng thành viên trong team theo đúng vai trò.
+- Cùng nhóm dự án thống nhất quy trình làm việc trên môi trường Cloud, đảm bảo an toàn bảo mật và kiểm soát chặt chẽ chi phí (AWS Credit).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| :---: | --- | :---: | :---: | --- |
+| 2 | - Khởi động dự án nhóm: <br>&emsp; + Họp nhóm thống nhất luồng công việc trên AWS. <br>&emsp; + Nghiên cứu tổng quan về AWS IAM Identity Center và kiến trúc quản lý nhiều tài khoản. | 19/10/2026 | 19/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
+| 3 | - Thiết lập danh tính trung tâm: <br>&emsp; + Cấu hình AWS IAM Identity Center. <br>&emsp; + Tạo Users và phân bổ vào các Groups tương ứng với vai trò của từng thành viên trong nhóm (VD: AI_Dev, Backend, Admin). | 20/10/2026 | 20/10/2026 | Bài lab 000012: IAM Identity Center |
+| 4 | - Cấu hình chính sách bảo mật: <br>&emsp; + Tìm hiểu và thiết lập Customer Managed Policies. <br>&emsp; + Cấp quyền truy cập dựa trên nguyên tắc đặc quyền tối thiểu (Least Privilege) cho từng nhóm. | 21/10/2026 | 21/10/2026 | Bài lab 000012: IAM Identity Center |
+| 5 | - Nâng cao bảo mật & Tự động hóa: <br>&emsp; + Nghiên cứu cơ chế Time-based access control (kiểm soát truy cập theo thời gian). <br>&emsp; + Làm quen với IAM Identity Center Identity Store APIs thông qua AWS CLI. | 22/10/2026 | 22/10/2026 | Bài lab 000012: IAM Identity Center |
+| 6 | - Kiểm thử & Quản trị chi phí (FinOps): <br>&emsp; + Phối hợp cùng nhóm test chéo quyền truy cập của các tài khoản. <br>&emsp; + Thực hiện Resource Cleanup (dọn dẹp tài nguyên) cẩn thận theo cảnh báo của bài Lab để tránh cạn kiệt AWS Credit của team. | 23/10/2026 | 23/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+- Nắm vững kiến trúc và triển khai thành công hệ thống AWS IAM Identity Center:
+  * Hiểu rõ sự khác biệt và ưu điểm của IAM Identity Center so với IAM truyền thống trong việc quản lý quy mô lớn.
+  * Xây dựng được kho lưu trữ danh tính (Identity Store) tập trung, giúp quá trình đăng nhập (SSO) của team tiện lợi và bảo mật hơn.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+- Áp dụng thành công các nguyên tắc bảo mật cốt lõi vào thực tế dự án:
+  * Phân chia rõ ràng cấu trúc User và Group, đảm bảo mỗi thành viên chỉ có quyền can thiệp vào các tài nguyên cần thiết cho công việc (Nguyên tắc Least Privilege).
+  * Biết cách tự định nghĩa các Customer Managed Policies để kiểm soát chi tiết và linh hoạt hơn so với các policy mặc định của AWS.
+  * Tiếp cận được kỹ thuật giới hạn quyền truy cập theo thời gian (Time-based access control).
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Cải thiện quy trình làm việc nhóm (Team Collaboration) và quản trị rủi ro:
+  * Team đã có một môi trường làm việc chung chuẩn chỉ, an toàn và dễ dàng rà soát (audit) các thao tác của từng thành viên.
+  * Tuân thủ nghiêm ngặt quy trình Resource Cleanup sau khi thử nghiệm, bảo vệ thành công ngân sách AWS Credit của nhóm chuẩn bị cho các đợt tích hợp mô hình AI nặng sắp tới.
