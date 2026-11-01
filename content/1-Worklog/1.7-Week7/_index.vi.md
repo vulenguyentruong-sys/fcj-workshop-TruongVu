@@ -1,59 +1,39 @@
 ---
 title: "Worklog Tuần 7"
-date: 2024-01-01
-weight: 1
+date: 2026-10-26
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+<!-- {{% notice warning %}}
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% /notice %}} -->
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Tiếp tục hoàn thành các bài lab nâng cao trên hệ thống The First Cloud Journey, tập trung vào Cơ sở dữ liệu (Database), Phân phối nội dung (CDN) và Triển khai hạ tầng dưới dạng code (IaC).
+- Bắt tay vào giai đoạn thực thi (Implementation) cho dự án FCAJ Buildrathon cùng nhóm.
+- Tích hợp các dịch vụ Serverless và AI/ML đã học vào kiến trúc thực tế của dự án.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| :---: | --- | :---: | :---: | --- |
+| 2 | - Khởi động dự án & Thực hành Database: <br>&emsp; + Họp nhóm chốt lại bản thiết kế kiến trúc Serverless cho dự án. <br>&emsp; + Thực hành lab về Cơ sở dữ liệu NoSQL (Tạo bảng, thiết lập khóa chính/khóa phân loại). | 26/10/2026 | 26/10/2026 | [NoSQL Database Essentials with Amazon DynamoDB](https://000060.awsfcaj.com) |
+| 3 | - Thực hành Phân phối nội dung: <br>&emsp; + Tìm hiểu cách lưu trữ website tĩnh và tăng tốc độ tải trang bằng CDN. <br>&emsp; + Hoàn thành lab thiết lập Amazon CloudFront kết hợp với S3. | 27/10/2026 | 27/10/2026 | [Content Delivery with Amazon CloudFront](https://000094.awsfcaj.com) |
+| 4 | - Thực hành Infrastructure as Code (IaC): <br>&emsp; + Tìm hiểu cách tự động hóa triển khai hạ tầng qua các file template (YAML/JSON). <br>&emsp; + Hoàn thành bài lab khởi tạo tài nguyên bằng AWS CloudFormation. | 28/10/2026 | 28/10/2026 | [Infrastructure as Code with AWS CloudFormation](https://000037.awsfcaj.com) |
+| 5 | - Triển khai dự án nhóm (Backend): <br>&emsp; + Cùng team viết code AWS Lambda xử lý logic dự án. <br>&emsp; + Kết nối API Gateway với Lambda và lưu trữ dữ liệu test xuống DynamoDB. | 29/10/2026 | 29/10/2026 | Tài liệu nội bộ nhóm & [AWS CLI](https://000011.awsfcaj.com) |
+| 6 | - Triển khai dự án nhóm (Tích hợp AI & Testing): <br>&emsp; + Cùng nhóm tích hợp mô hình Generative AI (Amazon Bedrock) vào luồng xử lý. <br>&emsp; + Test end-to-end toàn bộ kiến trúc, debug các lỗi liên quan đến quyền IAM và fix lỗi CORS của API. | 30/10/2026 | 30/10/2026 | [AWS Study Group](https://cloudjourney.awsfcaj.com/) |
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- Nắm vững kiến thức và kỹ năng thực hành qua các bài lab chuyên sâu:
+  * Hiểu rõ cơ chế hoạt động và cách thiết kế bảng tối ưu (Partition Key/Sort Key) trong hệ quản trị cơ sở dữ liệu NoSQL với Amazon DynamoDB.
+  * Thiết lập thành công hệ thống phân phối nội dung tĩnh (Amazon CloudFront) để giảm độ trễ (latency) cho ứng dụng Frontend.
+  * Làm quen với phương pháp triển khai hạ tầng dưới dạng mã (IaC) thông qua AWS CloudFormation, giúp tự động hóa quá trình tạo tài nguyên thay vì click thủ công trên Console.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Đẩy mạnh tiến độ dự án FCAJ Buildrathon cùng team:
+  * Chuyển hóa thành công bản vẽ kiến trúc (Architecture Diagram) thành các tài nguyên thực tế trên môi trường AWS.
+  * Tích hợp mượt mà bộ ba Serverless (API Gateway - Lambda - DynamoDB) để xử lý logic Backend cho dự án.
+  * Khắc phục thành công các lỗi phát sinh trong quá trình ghép nối hệ thống, đặc biệt là các vấn đề liên quan đến xác thực (IAM Roles) và giao tiếp giữa các dịch vụ AI (Amazon Bedrock).
+  * Nâng cao kỹ năng làm việc nhóm (Teamwork), phân chia task hiệu quả và phối hợp debug chéo giữa các thành viên.
