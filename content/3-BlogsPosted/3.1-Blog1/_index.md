@@ -51,13 +51,13 @@ To easily visualize, we can break down the operational process into the followin
 ### 4. Potential Deployment Issues
 
 * **Lambda Timeout:** If the AI model takes too long to process a request, Lambda might exceed its maximum execution time.
-  👉 *Solution:* Design appropriate timeouts, optimize prompts, and consider an asynchronous processing architecture.
+  --> *Solution:* Design appropriate timeouts, optimize prompts, and consider an asynchronous processing architecture.
 * **Bedrock Throttling:** Occurs when too many requests are sent to the model simultaneously.
-  👉 *Solution:* Check Amazon Bedrock quotas, implement a retry mechanism with exponential backoff, and control the number of concurrent requests.
+  --> *Solution:* Check Amazon Bedrock quotas, implement a retry mechanism with exponential backoff, and control the number of concurrent requests.
 * **Access Denied:** Lambda cannot invoke Bedrock or access S3/DynamoDB due to missing permissions.
-  👉 *Solution:* Verify the Lambda IAM Role, grant permissions based on the Least Privilege principle, and review Resource Policies.
+  --> *Solution:* Verify the Lambda IAM Role, grant permissions based on the Least Privilege principle, and review Resource Policies.
 * **Increased Costs:** Frequent LLM invocations or storing excessive amounts of data can drive up costs.
-  👉 *Solution:* Monitor usage via AWS Cost Explorer, limit prompt sizes, and set up S3 Lifecycle Policies.
+  --> *Solution:* Monitor usage via AWS Cost Explorer, limit prompt sizes, and set up S3 Lifecycle Policies.
 
 ### 5. Why Use This Architecture?
 Some notable benefits include:
