@@ -71,7 +71,8 @@ Sự kết hợp giữa Amazon Bedrock, AWS Lambda, API Gateway, S3 và DynamoDB
 
 Theo mình, việc hiểu rõ vai trò và luồng hoạt động của từng dịch vụ là bước quan trọng trước khi bắt tay vào triển khai một dự án AI thực tế.
 
-![Sơ đồ kiến trúc Serverless AI](image_8fcd23.jpg)
+<img width="1301" height="960" alt="image" src="https://github.com/user-attachments/assets/5f24e795-9ea6-42e5-a451-328390202c33" />
+
 
 🔗 **Link bài viết thảo luận:** [Bài đăng trên AWS Study Group VN](https://www.facebook.com/groups/660548818043427/user/100058180633098)
 
