@@ -50,13 +50,13 @@ Ngoài ra, hệ thống còn sử dụng DynamoDB để lưu trữ thông tin ki
 ### 4. Những vấn đề có thể gặp phải khi triển khai
 
 * **Lambda Timeout:** Khi mô hình AI xử lý yêu cầu mất nhiều thời gian, Lambda có thể vượt quá thời gian thực thi cho phép.
-  👉 *Giải pháp:* Thiết kế timeout phù hợp, tối ưu prompt, cân nhắc kiến trúc xử lý bất đồng bộ.
+  --> *Giải pháp:* Thiết kế timeout phù hợp, tối ưu prompt, cân nhắc kiến trúc xử lý bất đồng bộ.
 * **Bedrock Throttling:** Khi có quá nhiều request gửi đến mô hình cùng lúc.
-  👉 *Giải pháp:* Kiểm tra quota của Bedrock, sử dụng cơ chế retry với exponential backoff, kiểm soát số lượng request đồng thời.
+  --> *Giải pháp:* Kiểm tra quota của Bedrock, sử dụng cơ chế retry với exponential backoff, kiểm soát số lượng request đồng thời.
 * **Access Denied:** Lambda không thể gọi Bedrock hoặc truy cập S3, DynamoDB do thiếu quyền.
-  👉 *Giải pháp:* Kiểm tra IAM Role của Lambda, cấp quyền theo nguyên tắc Least Privilege, rà soát Resource Policy.
+  --> *Giải pháp:* Kiểm tra IAM Role của Lambda, cấp quyền theo nguyên tắc Least Privilege, rà soát Resource Policy.
 * **Chi phí tăng cao:** Việc gọi LLM thường xuyên hoặc lưu trữ quá nhiều dữ liệu có thể làm tăng chi phí.
-  👉 *Giải pháp:* Theo dõi qua AWS Cost Explorer, giới hạn kích thước prompt, thiết lập S3 Lifecycle Policy.
+  --> *Giải pháp:* Theo dõi qua AWS Cost Explorer, giới hạn kích thước prompt, thiết lập S3 Lifecycle Policy.
 
 ### 5. Tại sao nên sử dụng kiến trúc này?
 Một số lợi ích đáng chú ý:
