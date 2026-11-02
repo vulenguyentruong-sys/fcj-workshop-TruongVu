@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 # XÂY DỰNG ỨNG DỤNG AI TRÊN AWS: KẾT HỢP AMAZON BEDROCK, LAMBDA VÀ API GATEWAY
 
 Trong quá trình phát triển các ứng dụng AI hiện nay, việc tích hợp một mô hình ngôn ngữ lớn (LLM) vào hệ thống không còn là điều quá xa lạ. Tuy nhiên, làm thế nào để xây dựng một kiến trúc vừa có khả năng mở rộng, vừa dễ quản lý và đảm bảo hiệu suất hoạt động?
