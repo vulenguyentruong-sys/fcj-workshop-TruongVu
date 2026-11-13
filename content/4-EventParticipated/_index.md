@@ -27,7 +27,7 @@ During my internship, I participated in four major events. Each one was a memora
 
 ### [Event 3](4.3-Event3/)  
 &emsp;**Event Name:** Fireside Chat with Dr. Werner Vogels (CTO of Amazon)  
-&emsp;**Date & Time:** 08:30, October 24, 2026  
+&emsp;**Date & Time:** 08:30, October 02, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 &emsp;**Role:** Attendee  
 
