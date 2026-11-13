@@ -1,6 +1,6 @@
 ---
 title: "Published Blogs"
-date: 2026-11-02
+date: 2026-09-14
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
@@ -14,5 +14,5 @@ This blog introduces a flexible approach to building Generative AI applications 
 ### [Blog 2 - DATA SECURITY CHALLENGE WITH S3, KMS, CLOUDTRAIL & ATHENA](3.2-Blog2/)
 This blog shares a standard architectural flow to solve the challenge of securing sensitive data in a Production environment. By combining 4 services: S3, KMS, CloudTrail, and Athena, the system automatically encrypts data (Encryption at rest), logs all access operations, and allows for serverless audit querying. This is a perfect solution to help projects meet strict Compliance standards and ensure Segregation of Duties.
 
-### [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the recently added session policies feature in Amazon EKS Pod Identity, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 3 - DECOUPLING FRONTEND & BACKEND CI/CD PIPELINES ON AWS](3.3-Blog3/)
+This blog shares a Continuous Integration and Continuous Deployment (CI/CD) architecture using a full suite of AWS native services such as CodePipeline, CodeBuild, and CloudFormation. Completely decoupling the static interface deployment pipeline (Frontend) from the Serverless infrastructure update pipeline (Backend) helps optimize new feature release times, minimize cross-risk, and ensure infrastructure consistency from the testing phase to the end-user.
