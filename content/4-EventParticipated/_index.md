@@ -11,7 +11,7 @@ During my internship, I participated in four major events. Each one was a memora
 
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** First Cloud AI Journey (FCAJ) Kickoff  
-&emsp;**Date & Time:** 09:00, August 15, 2026  
+&emsp;**Date & Time:** 08:30, September 26, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 &emsp;**Role:** Attendee  
 
@@ -19,7 +19,7 @@ During my internship, I participated in four major events. Each one was a memora
 
 ### [Event 2](4.2-Event2/)  
 &emsp;**Event Name:** AWS Cloud Day and AI Day Hanoi - Watch Party  
-&emsp;**Date & Time:** 08:30, September 24, 2026  
+&emsp;**Date & Time:** 08:30, September 29, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 &emsp;**Role:** Attendee  
 
@@ -27,7 +27,7 @@ During my internship, I participated in four major events. Each one was a memora
 
 ### [Event 3](4.3-Event3/)  
 &emsp;**Event Name:** Fireside Chat with Dr. Werner Vogels (CTO of Amazon)  
-&emsp;**Date & Time:** 14:00, September 25, 2026  
+&emsp;**Date & Time:** 08:30, October 24, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 &emsp;**Role:** Attendee  
 
@@ -35,6 +35,6 @@ During my internship, I participated in four major events. Each one was a memora
 
 ### [Event 4](4.4-Event4/)  
 &emsp;**Event Name:** FCAJ October Meetup & Networking  
-&emsp;**Date & Time:** 09:00, October 24, 2026  
+&emsp;**Date & Time:** 08:30, October 24, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
 &emsp;**Role:** Attendee
