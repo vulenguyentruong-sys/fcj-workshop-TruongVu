@@ -26,7 +26,7 @@ Trong suốt quá trình thực tập, mình đã có cơ hội tham gia 4 sự 
 
 ### [Sự kiện 3](4.3-Event3/)  
 &emsp;**Tên sự kiện:** Trò chuyện cùng Tiến sĩ Werner Vogels (CTO của Amazon)  
-&emsp;**Thời gian:** 08:30, 24/10/2026  
+&emsp;**Thời gian:** 08:30, 02/10/2026  
 &emsp;**Địa điểm:** Tầng 26, Tháp Bitexco, 02 Hải Triều, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh  
 &emsp;**Vai trò:** Người tham dự  
 
