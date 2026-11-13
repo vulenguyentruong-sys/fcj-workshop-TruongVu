@@ -1,6 +1,6 @@
 ---
 title: "Các bài blogs đã đăng"
-date: 2026-11-02
+date: 2026-09-14
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
@@ -14,5 +14,5 @@ Blog này giới thiệu một hướng tiếp cận linh hoạt để xây dự
 ### [Blog 2 - BÀI TOÁN BẢO MẬT DỮ LIỆU VỚI S3, KMS, CLOUDTRAIL & ATHENA](3.2-Blog2/)
 Blog này chia sẻ một luồng kiến trúc chuẩn mực để giải quyết bài toán bảo mật dữ liệu nhạy cảm trên môi trường Production. Bằng cách kết hợp 4 dịch vụ S3, KMS, CloudTrail và Athena, hệ thống sẽ tự động mã hóa dữ liệu (Encryption at rest), ghi log toàn bộ thao tác truy cập và cho phép truy vấn kiểm toán (audit) một cách serverless. Đây là giải pháp hoàn hảo giúp dự án đạt các chuẩn Compliance khắt khe và đảm bảo phân tách trách nhiệm (Segregation of Duties).
 
-### [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 3 - TÁCH BẠCH LUỒNG CI/CD CHO FRONTEND & BACKEND TRÊN AWS](3.3-Blog3/)
+Blog này chia sẻ kiến trúc Tích hợp và Triển khai liên tục (CI/CD) sử dụng trọn bộ dịch vụ native của AWS như CodePipeline, CodeBuild và CloudFormation. Việc phân tách hoàn toàn giữa luồng deploy giao diện tĩnh (Frontend) và luồng cập nhật hạ tầng Serverless (Backend) giúp tối ưu hóa thời gian phát hành tính năng mới, giảm thiểu rủi ro chéo và đảm bảo tính nhất quán từ khâu kiểm thử đến khi ứng dụng tiếp cận người dùng cuối.
