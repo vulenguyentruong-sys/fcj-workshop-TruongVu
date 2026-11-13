@@ -32,7 +32,7 @@ Các điểm chính cần nắm về luồng CI/CD Backend:
 
 **Link**
 
-[https://www.facebook.com/groups/660548818043427/user/100058180633098]
+https://www.facebook.com/groups/660548818043427/user/100058180633098
 
 **Hướng dẫn**
 
