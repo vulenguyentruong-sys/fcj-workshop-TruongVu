@@ -1,31 +1,41 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-11-09
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# TÁCH BẠCH LUỒNG CI/CD CHO FRONTEND & BACKEND TRÊN AWS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Khi xây dựng ứng dụng Serverless, việc thiết lập một quy trình Tích hợp và Triển khai liên tục (CI/CD) linh hoạt là cực kỳ quan trọng. Thay vì sử dụng các công cụ bên thứ ba, hướng tiếp cận sử dụng trọn bộ dịch vụ native của AWS (CodePipeline, CodeBuild, CloudFormation...) mang lại sự đồng bộ cao. Điểm nhấn của kiến trúc này là sự phân tách hoàn toàn giữa luồng deploy giao diện tĩnh và luồng cập nhật hạ tầng.
 
-Các điểm chính cần nắm:
+Các điểm chính cần nắm về luồng CI/CD Frontend:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+- Vòng đời triển khai bắt đầu khi lập trình viên (Developer) tiến hành đẩy mã nguồn (push code) lên kho lưu trữ CodeCommit.
+- Sự kiện cập nhật mã nguồn này ngay lập tức kích hoạt (trigger) tiến trình xử lý trên dịch vụ CodeBuild.
+- CodeBuild đảm nhận nhiệm vụ biên dịch mã nguồn và trực tiếp đẩy thư mục bản dựng (build and push build folder) vào không gian lưu trữ tĩnh S3 bucket.
+- Xuyên suốt quá trình này, CodePipeline đóng vai trò là công cụ điều phối tự động toàn bộ luồng công việc bên trong hệ sinh thái AWS Cloud.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Các điểm chính cần nắm về luồng CI/CD Backend:
 
-...Hình ảnh...
+- Tương tự như Frontend, quy trình tự động được khởi tạo khi Developer push code lên kho lưu trữ CodeCommit.
+- Sự thay đổi này sẽ tự động kích hoạt môi trường đóng gói của CodeBuild.
+- Điểm khác biệt cốt lõi là CodeBuild không cập nhật trực tiếp lên các dịch vụ đích, mà phát lệnh triển khai hạ tầng (deploy stack) cho dịch vụ AWS CloudFormation.
+- Dịch vụ AWS CloudFormation tiếp nhận cấu hình và tiến hành cập nhật các tài nguyên thực tế (update resources) một cách an toàn.
+- Các dịch vụ Serverless đích chịu sự tác động và cập nhật bao gồm: các hàm xử lý logic (Lambda functions), bảng cơ sở dữ liệu (DynamoDB tables), không gian lưu trữ (S3 bucket), và hệ thống quản lý định danh người dùng (Cognito user pool).
 
-...Link...
+**Hình ảnh**
 
-...Hướng dẫn...
+![Luồng CI/CD Frontend](image_f0f09e.png)
+![Luồng CI/CD Backend](image_f0f0ba.png)
+
+**Link**
+
+[https://www.facebook.com/groups/660548818043427/user/100058180633098]
+
+**Hướng dẫn**
+
+Việc áp dụng kiến trúc Serverless kết hợp với bộ công cụ CI/CD native của AWS mang lại lợi thế lớn cho các dự án đám mây, đặc biệt khi cần thiết lập một nền tảng vận hành linh hoạt và bảo mật. Bằng cách tách bạch quy trình triển khai thành hai luồng độc lập, kiến trúc này không chỉ tối ưu hóa thời gian phát hành tính năng mới mà còn cô lập rủi ro gián đoạn dịch vụ, đảm bảo tính nhất quán hạ tầng từ khâu kiểm thử cho đến khi ứng dụng tiếp cận người dùng cuối.
+
+#AWS #Serverless #CICD #AWSCodePipeline #CodeBuild #CloudFormation #CloudComputing #DevOps #AWSStudyGroupVN #FCAJ
