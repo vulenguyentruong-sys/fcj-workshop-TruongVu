@@ -18,7 +18,7 @@ chapter: false
 
 &emsp; **University:** FPT University
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Artificial Intelligence
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
