@@ -15,7 +15,7 @@ chapter: false
 
 &emsp; **Trường:** Đại học FPT 
 
-&emsp; **Ngành:** Công nghệ thông tin
+&emsp; **Ngành:** Trí tuệ nhân tạo
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
