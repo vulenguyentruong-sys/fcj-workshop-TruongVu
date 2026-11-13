@@ -27,8 +27,9 @@ Các điểm chính cần nắm về luồng CI/CD Backend:
 
 **Hình ảnh**
 
-![Luồng CI/CD Frontend](image_f0f09e.png)
-![Luồng CI/CD Backend](image_f0f0ba.png)
+<img width="1085" height="620" alt="image" src="https://github.com/user-attachments/assets/8c650c79-4610-4fdc-8fc5-946b55ff83d6" />
+
+<img width="1056" height="572" alt="image" src="https://github.com/user-attachments/assets/10038089-9db8-4ffb-be37-a78829569343" />
 
 **Link**
 
