@@ -1,31 +1,42 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-11-09
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# DECOUPLING FRONTEND & BACKEND CI/CD PIPELINES ON AWS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+When building Serverless applications, establishing a flexible Continuous Integration and Continuous Deployment (CI/CD) workflow is absolutely crucial. Instead of relying on third-party tools, an approach utilizing a full suite of AWS native services (CodePipeline, CodeBuild, CloudFormation...) provides high synchronization. The highlight of this architecture is the complete decoupling between the static interface deployment pipeline and the infrastructure update pipeline.
 
-Key points to know:
+Key points to understand about the Frontend CI/CD Pipeline:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+- The deployment lifecycle begins when the developer pushes source code to the CodeCommit repository.
+- This source code update event immediately triggers the processing task on the CodeBuild service.
+- CodeBuild takes on the responsibility of compiling the source code and directly pushes the build folder into an S3 bucket static hosting space.
+- Throughout this process, CodePipeline acts as the automated orchestrator for the entire workflow within the AWS Cloud ecosystem.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+Key points to understand about the Backend CI/CD Pipeline:
 
-...Image...
+- Similar to the Frontend, the automated process is initiated when the developer pushes code to the CodeCommit repository.
+- This change automatically triggers the CodeBuild packaging environment.
+- The core difference is that CodeBuild does not update the destination services directly; instead, it issues a deploy stack command to the AWS CloudFormation service.
+- AWS CloudFormation receives the configuration and proceeds to safely update the actual resources.
+- The destination Serverless services affected and updated include: logic processing functions (Lambda functions), database tables (DynamoDB tables), storage space (S3 bucket), and the user identity management system (Cognito user pool).
 
-...Link...
+**Images**
 
-...Guide...
+<img width="1085" height="620" alt="image" src="https://github.com/user-attachments/assets/8c650c79-4610-4fdc-8fc5-946b55ff83d6" />
+
+<img width="1056" height="572" alt="image" src="https://github.com/user-attachments/assets/10038089-9db8-4ffb-be37-a78829569343" />
+
+**Link**
+
+[Post on AWS Study Group VN](https://www.facebook.com/groups/660548818043427/user/100058180633098)
+
+**Guide**
+
+Adopting a Serverless architecture combined with AWS's native CI/CD toolset brings significant advantages to cloud projects, especially when establishing a flexible and secure operational platform is required. By separating the deployment process into two independent pipelines, this architecture not only optimizes the release time for new features but also isolates the risk of service disruption, ensuring infrastructure consistency from the testing phase right up until the application reaches the end-user.
+
+#AWS #Serverless #CICD #AWSCodePipeline #CodeBuild #CloudFormation #CloudComputing #DevOps #AWSStudyGroupVN #FCAJ
