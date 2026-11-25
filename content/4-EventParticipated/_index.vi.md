@@ -52,4 +52,4 @@ Trong suốt quá trình thực tập, mình đã có cơ hội tham gia 6 sự 
 &emsp;**Tên sự kiện:** AWS Student Community Day Vietnam 2026  
 &emsp;**Thời gian:** 08:30, 21/11/2026  
 &emsp;**Địa điểm:** Tầng 26, Tháp Bitexco, 02 Hải Triều, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh  
-&emsp;**Vai trò:** Người tham dự (ASBG SGU)
+&emsp;**Vai trò:** Người tham dự
