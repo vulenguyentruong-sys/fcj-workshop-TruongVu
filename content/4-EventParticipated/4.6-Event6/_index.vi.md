@@ -59,4 +59,4 @@ Sự kiện đã tạo ra một không gian tuyệt vời để gặp gỡ các 
 <img width="2568" height="1926" alt="image" src="https://github.com/user-attachments/assets/beeb8ed9-1683-4cae-a7ea-06042a160ec8" />
 
 
-> Dù hành trình 3 tiếng đã khép lại, nhưng ngọn lửa học thuật, những kiến thức và kết nối được tạo ra sẽ tiếp tục lan tỏa. Hẹn gặp lại các Builders trên những hành trình tiếp theo! 🚀
+> Dù hành trình 3 tiếng đã khép lại, nhưng ngọn lửa học thuật, những kiến thức và kết nối được tạo ra sẽ tiếp tục lan tỏa. Hẹn gặp lại các Builders trên những hành trình tiếp theo! 
