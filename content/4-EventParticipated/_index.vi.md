@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong suốt quá trình thực tập, mình đã có cơ hội tham gia 4 sự kiện lớn. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, mang lại nhiều kiến thức mới mẻ, thú vị và bổ ích, cùng với những khoảnh khắc giao lưu tuyệt vời với cộng đồng AWS.
+Trong suốt quá trình thực tập, mình đã có cơ hội tham gia 6 sự kiện lớn. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, mang lại nhiều kiến thức mới mẻ, thú vị và bổ ích, cùng với những khoảnh khắc giao lưu tuyệt vời với cộng đồng AWS.
 
 ### [Sự kiện 1](4.1-Event1/)  
 &emsp;**Tên sự kiện:** Lễ khởi động First Cloud AI Journey (FCAJ) Kickoff  
@@ -36,4 +36,20 @@ Trong suốt quá trình thực tập, mình đã có cơ hội tham gia 4 sự 
 &emsp;**Tên sự kiện:** FCAJ October Meetup & Networking  
 &emsp;**Thời gian:** 08:30, 24/10/2026  
 &emsp;**Địa điểm:** Tầng 26, Tháp Bitexco, 02 Hải Triều, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh  
-&emsp;**Vai trò:** Người tham dự
+&emsp;**Vai trò:** Người tham dự  
+
+---
+
+### [Sự kiện 5](4.5-Event5/)  
+&emsp;**Tên sự kiện:** Cloud Mastery  
+&emsp;**Thời gian:** 08:30, 14/11/2026  
+&emsp;**Địa điểm:** Văn phòng AWS, TP. Hồ Chí Minh  
+&emsp;**Vai trò:** Người tham dự  
+
+---
+
+### [Sự kiện 6](4.6-Event6/)  
+&emsp;**Tên sự kiện:** AWS Student Community Day Vietnam 2026  
+&emsp;**Thời gian:** 08:30, 21/11/2026  
+&emsp;**Địa điểm:** Tầng 26, Tháp Bitexco, 02 Hải Triều, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh  
+&emsp;**Vai trò:** Người tham dự (ASBG SGU)
