@@ -52,4 +52,4 @@ During my internship, I participated in six major events. Each one was a memorab
 &emsp;**Event Name:** AWS Student Community Day Vietnam 2026  
 &emsp;**Date & Time:** 08:30, November 21, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
-&emsp;**Role:** Attendee (ASBG SGU)
+&emsp;**Role:** Attendee
