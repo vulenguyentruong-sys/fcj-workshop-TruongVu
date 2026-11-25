@@ -6,8 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-
-During my internship, I participated in four major events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with wonderful networking moments with the AWS community.
+During my internship, I participated in six major events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with wonderful networking moments with the AWS community.
 
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** First Cloud AI Journey (FCAJ) Kickoff  
@@ -37,4 +36,20 @@ During my internship, I participated in four major events. Each one was a memora
 &emsp;**Event Name:** FCAJ October Meetup & Networking  
 &emsp;**Date & Time:** 08:30, October 24, 2026  
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
-&emsp;**Role:** Attendee
+&emsp;**Role:** Attendee  
+
+---
+
+### [Event 5](4.5-Event5/)  
+&emsp;**Event Name:** Cloud Mastery  
+&emsp;**Date & Time:** 08:30, November 14, 2026  
+&emsp;**Location:** AWS Office, Ho Chi Minh City  
+&emsp;**Role:** Attendee  
+
+---
+
+### [Event 6](4.6-Event6/)  
+&emsp;**Event Name:** AWS Student Community Day Vietnam 2026  
+&emsp;**Date & Time:** 08:30, November 21, 2026  
+&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City  
+&emsp;**Role:** Attendee (ASBG SGU)
