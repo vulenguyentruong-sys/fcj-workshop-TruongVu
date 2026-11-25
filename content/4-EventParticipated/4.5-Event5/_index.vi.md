@@ -21,7 +21,7 @@ pre: " <b> 4.5. </b> "
 ### Khách Mời Đặc Biệt & Địa Điểm
 
 - **Khách mời/Diễn giả:** Các chuyên gia và Mentor từ cộng đồng AWS.
-- **Địa điểm:** Văn phòng AWS Việt Nam, TP.HCM.
+- **Địa điểm:** Văn phòng AWS, Tầng 26, Tòa nhà Bitexco Financial Tower, TP.HCM.
 
 ### Nội Dung Nổi Bật
 
