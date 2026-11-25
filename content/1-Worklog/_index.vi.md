@@ -22,12 +22,12 @@ Trong trang này, tôi sẽ tổng hợp lại toàn bộ quá trình thực t�
 
 **Tuần 7:** [Thực hành DynamoDB, CloudFront, CloudFormation và triển khai kiến trúc Serverless cho dự án](./1.7-Week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Thực hành cấu hình giám sát CloudWatch và tối ưu hóa kích thước (right-sizing) cho Amazon EC2](./1.8-Week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Triển khai ứng dụng trên Docker, cấu hình mạng VPC, EC2, Amazon RDS và đẩy image lên ECR](./1.9-Week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Thiết lập quy trình tự động hóa CI/CD cho Amazon ECS (GitLab, GitHub Actions, AWS CodeBuild)](./1.10-Week10/)
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
+**Tuần 11:** [Tìm hiểu chiến lược tối ưu chi phí (FinOps) với AWS Savings Plans và Reserved Instances](./1.11-Week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Thực hành phân tích chi phí (Cost and Usage Analysis) và hoàn thiện đồ án/project cuối kỳ](./1.12-Week12/)
