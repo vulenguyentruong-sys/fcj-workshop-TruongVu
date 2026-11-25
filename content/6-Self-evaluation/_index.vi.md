@@ -1,26 +1,23 @@
 ---
 title: "Tự đánh giá"
-date: 2024-01-01
+date: 2026-11-25
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong suốt thời gian thực tập tại **Amazon Web Services (AWS) - Chương trình First Cloud AI Journey (FCAJ)** từ **tháng 09/2026** đến **tháng 12/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
 
-Trong suốt thời gian thực tập tại **[Tên công ty/tổ chức]** từ **[ngày bắt đầu]** đến **[ngày kết thúc]**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia **[mô tả ngắn gọn dự án hoặc công việc chính]**, qua đó cải thiện kỹ năng **[liệt kê kỹ năng: lập trình, phân tích, viết báo cáo, giao tiếp…]**.  
+Tôi đã tham gia **nghiên cứu kiến trúc Cloud, thực hành chuỗi Lab chuyên sâu của AWS và phát triển đồ án FCAJ Buildrathon (ứng dụng AI Serverless)**. Qua đó, tôi cải thiện rõ rệt các kỹ năng **triển khai hạ tầng dưới dạng mã (IaC), thiết lập luồng CI/CD, tối ưu hóa chi phí (FinOps), cũng như kỹ năng làm việc nhóm, phân tích vấn đề và viết báo cáo kỹ thuật**.  
 
-Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
+Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, chủ động tìm tòi nghiên cứu tài liệu và tích cực trao đổi với đồng nghiệp, mentor để nâng cao hiệu quả công việc.
 
 Để phản ánh một cách khách quan quá trình thực tập, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
 
 
 | STT | Tiêu chí                            | Mô tả                                                                                            | Tốt | Khá | Trung bình |
 | --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn** | Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc | ✅   | ☐   | ☐          |
+| 1   | **Kiến thức và kỹ năng chuyên môn** | Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc | ☐  | ✅  | ☐          |
 | 2   | **Khả năng học hỏi**                | Tiếp thu kiến thức mới, học hỏi nhanh                                                            | ☐   | ✅   | ☐          |
 | 3   | **Chủ động**                        | Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn                                                  | ✅   | ☐   | ☐          |
 | 4   | **Tinh thần trách nhiệm**           | Hoàn thành công việc đúng hạn, đảm bảo chất lượng                                                | ✅   | ☐   | ☐          |
@@ -33,8 +30,8 @@ Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân t
 | 11  | **Đóng góp vào dự án/tổ chức**      | Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team                                         | ✅   | ☐   | ☐          |
 | 12  | **Tổng thể**                        | Đánh giá chung về toàn bộ quá trình thực tập                                                     | ✅   | ☐   | ☐          |
 
-### Cần cải thiện
+### Những điểm cần cải thiện
 
-* Nâng cao tính kỹ luật, chấp hành nghiêm chỉnh nội quy của công ty hoặc bất kỳ trong một tổ chức nào
-* Cải thiện trong cách tư duy giải quyết vấn đề
-* Học cách giao tiếp tốt hơn trong giao tiếp hằng ngày và trong công việc, xử lý tình huống
+- **Quản lý thời gian và tính kỷ luật:** Cần rèn luyện tính kỷ luật cá nhân khắt khe hơn, quản lý quỹ thời gian hiệu quả để tuân thủ nghiêm chỉnh mọi nội quy, quy định và tiến độ làm việc của tổ chức.
+- **Tư duy giải quyết vấn đề (Problem-solving):** Cần cải thiện kỹ năng phân tích lỗi (troubleshooting) trên hệ thống thực tế. Thay vì chỉ tìm cách khắc phục tạm thời, bản thân cần học cách đào sâu tìm ra nguyên nhân gốc rễ (root-cause) để đưa ra giải pháp triệt để hơn.
+- **Kỹ năng giao tiếp và xử lý tình huống:** Cần chủ động rèn luyện cách giao tiếp, trình bày vấn đề chuyên môn một cách tự tin, rõ ràng, tinh tế hơn trong môi trường công sở hằng ngày và biết cách linh hoạt ứng phó khi gặp các tình huống phát sinh ngoài dự kiến.
