@@ -1,59 +1,31 @@
 ---
 title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+date: 2026-11-23
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Tìm hiểu chuyên sâu về các chiến lược tối ưu hóa chi phí (FinOps) trên hạ tầng AWS.
+- Phân biệt rõ ràng các mô hình cam kết sử dụng tài nguyên: Savings Plans và Reserved Instances.
+- Thực hành phân tích dữ liệu chi phí và đưa ra quyết định mua gói tiết kiệm phù hợp cho Compute và Database.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Đọc tổng quan về chiến lược tối ưu hóa chi phí trên AWS. <br> - Tìm hiểu khái niệm và cơ chế hoạt động của AWS Savings Plans. | 23/11/2026 | 23/11/2026 | <https://000042.awsfcaj.com/> <br> <https://000042.awsfcaj.com/1-what-is-savings-plan/> |
+| 3 | - **Phân tích và Đăng ký Savings Plan:** <br>&emsp; + Sử dụng AWS Cost Explorer để xem các đề xuất (Recommendations) về Savings Plan. <br>&emsp; + Thực hành quy trình mô phỏng các bước mua (Purchase) Savings Plan. | 24/11/2026 | 24/11/2026 | <https://000042.awsfcaj.com/2-savings-plan-recommendation/> <br> <https://000042.awsfcaj.com/3-purchase-saving-plan/> |
+| 4 | - **Reserved Instances (Compute):** <br>&emsp; + Tìm hiểu mô hình đặt trước tài nguyên cho máy chủ ảo (Amazon EC2 Reserved Instances). <br>&emsp; + So sánh ưu nhược điểm và tính linh hoạt giữa Reserved Instances và Savings Plans. | 25/11/2026 | 25/11/2026 | <https://000042.awsfcaj.com/4-reserved-instance/> |
+| 5 | - **Reserved Instances (Database):** <br>&emsp; + Tìm hiểu chiến lược tối ưu hóa chi phí cho cơ sở dữ liệu với Amazon RDS Reserved DB Instances. | 26/11/2026 | 26/11/2026 | <https://000042.awsfcaj.com/5-reserved-db-instance/> |
+| 6 | - **AWS Cost Management:** <br>&emsp; + Khám phá thêm các công cụ kiểm soát chi phí chuyên sâu, cảnh báo ngân sách (AWS Budgets) và phát hiện bất thường (Cost Anomaly Detection). <br>&emsp; + Tổng kết các phương pháp thực hành tốt nhất (Best Practices) về FinOps. | 27/11/2026 | 27/11/2026 | <https://000034.awsfcaj.com/> |
 
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Nắm vững các mô hình tính phí của AWS và cách thiết lập chiến lược tối ưu hóa chi phí (FinOps) hiệu quả cho dự án.
+- Hiểu rõ sự khác biệt cốt lõi về tính linh hoạt và mức độ cam kết giữa Compute Savings Plans, EC2 Instance Savings Plans và Standard/Convertible Reserved Instances.
+- Biết cách tận dụng AWS Cost Explorer để phân tích lịch sử sử dụng tài nguyên (historical usage) và nhận các đề xuất tiết kiệm chi phí tự động từ AWS một cách chính xác.
+- Nắm được cách áp dụng mô hình Reserved DB Instances để giảm thiểu đáng kể chi phí duy trì cơ sở dữ liệu Amazon RDS so với mức giá On-Demand.
+- Củng cố tư duy thiết kế kiến trúc tiết kiệm chi phí (Cost Optimization Pillar) trong AWS Well-Architected Framework, áp dụng trực tiếp để tối ưu hóa hạ tầng của đồ án FCAJ.
