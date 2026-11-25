@@ -21,7 +21,7 @@ pre: " <b> 4.5. </b> "
 ### Special Guests & Location
 
 - **Speakers:** Experts and Mentors from the AWS community.
-- **Location:** AWS Vietnam Office, Ho Chi Minh City.
+- **Location:** AWS Office, 26th Floor, Bitexco Financial Tower, HCMC.
 
 ### Key Highlights
 
