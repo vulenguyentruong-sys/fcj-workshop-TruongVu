@@ -25,7 +25,8 @@ Giải pháp giúp rút ngắn thời gian khai thác bệnh sử ban đầu xu�
 ### 3. Kiến trúc giải pháp  
 Nền tảng áp dụng kiến trúc **AWS 3-Tier VPC (`10.0.0.0/16`)** tại khu vực `ap-southeast-1` nhằm cô lập hoàn toàn tầng tính toán và cơ sở dữ liệu khỏi truy cập Internet trực tiếp. Lưu lượng người dùng đi qua **Route 53**, **AWS WAF** và **Amazon CloudFront** tới **Application Load Balancer (ALB)** tại `Public Subnet`, sau đó định tuyến nội bộ qua cổng `8000` vào container trên **Amazon EC2** nằm trong `Private App Subnet`. Dữ liệu Vector **ChromaDB (`./medical_vectordb`)** và tệp tải lên (`./uploads`) được lưu bền vững trên ổ đĩa **Amazon EBS (`gp3`)** kèm sao lưu sang **Amazon S3**, trong khi 5 bảng dữ liệu giao dịch lưu tại **Amazon RDS PostgreSQL** (`SQL :5432`) trong `Private Database Subnet`. Mọi kết nối chiều ra tới **OpenRouter / Gemini AI**, **Google OAuth 2.0** và **Gmail SMTP / SpeedSMS** đều đi qua **NAT Gateway**.  
 
-![MediMind Clinical AI AWS Architecture](/images/2-Proposal/aws_architecture_current.png)
+<img width="2560" height="1674" alt="architecture" src="https://github.com/user-attachments/assets/ab55faef-924c-40ff-8622-f7a663c190ec" />
+
 
 *Dịch vụ AWS sử dụng*  
 - *Amazon Route 53 & Amazon CloudFront*: Phân giải DNS, lưu đệm tài nguyên tĩnh (1 TB miễn phí/tháng) và ẩn địa chỉ gốc máy chủ.  
