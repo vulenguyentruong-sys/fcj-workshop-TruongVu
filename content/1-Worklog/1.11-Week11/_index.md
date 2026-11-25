@@ -1,57 +1,31 @@
 ---
 title: "Week 11 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-11-23
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
+### Objectives for Week 11:
+
+- Deep dive into Cost Optimization strategies (FinOps) on AWS infrastructure.
+- Clearly distinguish between resource commitment models: Savings Plans and Reserved Instances.
+- Practice analyzing cost data and making informed decisions on purchasing appropriate savings plans for Compute and Database workloads.
+
+### Tasks to be implemented this week:
+| Day | Task | Start Date | End Date | Resource |
+| --- | --- | --- | --- | --- |
+| Mon | - Read the overview of AWS cost optimization strategies. <br> - Understand the concepts and operational mechanics of AWS Savings Plans. | 11/23/2026 | 11/23/2026 | <https://000042.awsfcaj.com/> <br> <https://000042.awsfcaj.com/1-what-is-savings-plan/> |
+| Tue | - **Savings Plan Analysis & Purchase:** <br>&emsp; + Utilize AWS Cost Explorer to review Savings Plan recommendations based on usage. <br>&emsp; + Walk through the simulated process of purchasing a Savings Plan. | 11/24/2026 | 11/24/2026 | <https://000042.awsfcaj.com/2-savings-plan-recommendation/> <br> <https://000042.awsfcaj.com/3-purchase-saving-plan/> |
+| Wed | - **Reserved Instances (Compute):** <br>&emsp; + Learn about the resource reservation model for virtual servers (Amazon EC2 Reserved Instances). <br>&emsp; + Compare the pros, cons, and flexibility between Reserved Instances and Savings Plans. | 11/25/2026 | 11/25/2026 | <https://000042.awsfcaj.com/4-reserved-instance/> |
+| Thu | - **Reserved Instances (Database):** <br>&emsp; + Explore cost optimization strategies for databases using Amazon RDS Reserved DB Instances. | 11/26/2026 | 11/26/2026 | <https://000042.awsfcaj.com/5-reserved-db-instance/> |
+| Fri | - **AWS Cost Management:** <br>&emsp; + Explore advanced cost control tools, budget alerts (AWS Budgets), and Cost Anomaly Detection. <br>&emsp; + Summarize FinOps best practices. | 11/27/2026 | 11/27/2026 | <https://000034.awsfcaj.com/> |
 
 
-### Week 11 Objectives:
+### Achieved Results for Week 11:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 11 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Mastered AWS pricing models and how to establish an effective cost optimization strategy (FinOps) for the project.
+- Clearly understood the core differences in flexibility and commitment levels between Compute Savings Plans, EC2 Instance Savings Plans, and Standard/Convertible Reserved Instances.
+- Learned how to leverage AWS Cost Explorer to analyze historical usage data and accurately receive automated cost-saving recommendations from AWS.
+- Understood how to apply the Reserved DB Instances model to significantly reduce Amazon RDS maintenance costs compared to On-Demand pricing.
+- Reinforced the Cost Optimization Pillar mindset from the AWS Well-Architected Framework, directly applying it to optimize the infrastructure of the FCAJ project.
