@@ -1,57 +1,31 @@
 ---
 title: "Week 10 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-11-16
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
+### Objectives for Week 10:
+
+- Set up an automated CI/CD (Continuous Integration/Continuous Deployment) pipeline for containers running on Amazon Elastic Container Service (ECS).
+- Integrate and compare CI/CD deployment across multiple platforms, including GitLab, GitHub Actions, and AWS CodeBuild.
+- Apply advanced AWS monitoring and logging tools to continuously track the performance and health of containerized applications.
+
+### Tasks to be implemented this week:
+| Day | Task | Start Date | End Date | Resource |
+| --- | --- | --- | --- | --- |
+| Mon | - Read the overview of CI/CD deployment architecture with ECS Containers. <br> - Prepare the environment, resources, and initial configuration for ECS (Preparation). | 11/16/2026 | 11/16/2026 | <https://000017.awsfcaj.com/1-introduction/> <br> <https://000017.awsfcaj.com/2-preparation/> |
+| Tue | - **CI/CD Deployment Practice (Part 1):** <br>&emsp; + Set up automated CI/CD deployment with GitLab. <br>&emsp; + Set up automated CI/CD deployment with GitHub Actions. | 11/17/2026 | 11/17/2026 | <https://000017.awsfcaj.com/3-cicd-gitlab/> <br> <http://000017.awsfcaj.com/4-cicd-github/> |
+| Wed | - **CI/CD Deployment Practice (Part 2):** <br>&emsp; + Implement CI/CD deployment using the native AWS CodeBuild service. | 11/18/2026 | 11/18/2026 | <https://000017.awsfcaj.com/5-cicd-codebuild/> |
+| Thu | - **Monitoring and Logging:** <br>&emsp; + Monitor application performance with Container Insights (CloudWatch). <br>&emsp; + Configure custom log routing with FireLens. | 11/19/2026 | 11/19/2026 | <https://000017.awsfcaj.com/6-monitoring-with-container-insights/> <br> <https://000017.awsfcaj.com/7-logs-router-with-firelens/> |
+| Fri | - Verify the stability of the newly established CI/CD pipelines. <br> - Clean up resources created during the lab to optimize AWS costs. | 11/20/2026 | 11/20/2026 | <https://000017.awsfcaj.com/8-clean-up/> |
 
 
-### Week 10 Objectives:
+### Achieved Results for Week 10:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 10 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Clearly understood the role and mechanics of a CI/CD pipeline in automating the deployment of code to Amazon ECS, significantly reducing manual errors and accelerating release cycles.
+- Successfully established and understood the differences in configuring CI/CD pipelines across three popular tools: GitLab, GitHub Actions, and AWS CodeBuild.
+- Enabled and proficiently utilized CloudWatch Container Insights to collect, aggregate, and summarize metrics and logs from containerized applications.
+- Successfully deployed AWS FireLens as a custom log router, enabling flexible management and distribution of ECS task logs.
+- Strictly followed cost management practices by thoroughly reviewing and cleaning up AWS resources after completing the lab series.
