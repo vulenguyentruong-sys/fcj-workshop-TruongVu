@@ -10,7 +10,7 @@ pre: " <b> 5. </b> "
 
 #### Tổng quan
 
-**MediMind Clinical AI** là nền tảng trợ lý y tế lâm sàng đa phương thức khép kín, hỗ trợ sàng lọc triệu chứng ban đầu, đối soát đơn thuốc/phiếu xét nghiệm và tư vấn dinh dưỡng cá nhân hóa cho người bệnh và bác sĩ tại Việt Nam. Trong bài workshop thực hành này, bạn sẽ đóng gói ứng dụng Python/Docker (`app.py` và `core/main_fastapi.py`), khởi tạo hạ tầng **AWS VPC 3 tầng mạng (`10.0.0.0/16`)** tuân thủ chuẩn bảo mật **HIPAA** tại khu vực **`ap-southeast-1` (Singapore)**, và triển khai hoàn chỉnh hệ thống với **Hybrid RAG (BM25 + ChromaDB + Cross-Encoder Reranker)**, **Double Guardrails** và **Pipeline OCR Đối soát 8 Bước**.
+**MediMind Clinical AI** là nền tảng trợ lý y tế lâm sàng đa phương thức khép kín, hỗ trợ sàng lọc triệu chứng ban đầu, đối soát đơn thuốc/phiếu xét nghiệm và tư vấn dinh dưỡng cá nhân hóa cho người bệnh và bác sĩ tại Việt Nam. Trong bài workshop thực hành này, bạn sẽ đóng gói ứng dụng Python/Docker (`app.py` và `core/main_fastapi.py`), khởi tạo hạ tầng **AWS VPC 3 tầng mạng (`10.0.0.0/16`)** tuân thủ chuẩn bảo mật **HIPAA** tại khu vực **`ap-southeast-1` (Singapore)**, và triển khai hoàn chỉnh hệ thống với **Hybrid RAG (BM25 + ChromaDB + Cross-Encoder Reranker)**, **Double Guardrails** và **Pipeline OCR**.
 
 {{% notice info %}}
 **Kết quả & Chỉ số Trọng tâm của Workshop**
