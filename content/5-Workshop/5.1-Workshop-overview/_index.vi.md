@@ -27,7 +27,8 @@ Các bệnh viện tuyến đầu tại Việt Nam thường xuyên hoạt độ
 
 #### Kiến trúc AWS VPC 3 Tầng Mục tiêu (`ap-southeast-1`)
 
-![Sơ đồ Kiến trúc AWS MediMind](/images/5-Workshop/5.1-Workshop-overview/aws_architecture_current.png)
+<img width="2560" height="1674" alt="architecture" src="https://github.com/user-attachments/assets/762125c5-414d-46c3-978d-da2aa68e93cf" />
+
 
 ##### Giải thích Chi tiết 9 Luồng Dữ liệu trên Kiến trúc:
 
