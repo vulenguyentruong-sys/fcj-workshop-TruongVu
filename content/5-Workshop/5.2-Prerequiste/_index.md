@@ -1,242 +1,132 @@
 ---
-title : "Prerequiste"
-date : 2024-01-01 
-weight : 2 
-chapter : false
-pre : " <b> 5.2. </b> "
+title: "Prerequisites"
+date: 2026-11-26
+weight: 2
+chapter: false
+pre: " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Add the following IAM permission policy to your user account to deploy and cleanup this workshop.
-```
+#### Required Accounts & Local Tooling
+
+Before provisioning AWS resources or building the container image, ensure you have:
+- **AWS Account** with access to the **Asia Pacific (Singapore) `ap-southeast-1`** region and an IAM user/role authorized to create VPC, EC2, EBS, RDS, S3, ECR, ALB, CloudFront, WAF, Route 53, ACM, Secrets Manager, and CloudWatch resources.
+- **Local Workstation Tools:**
+  - **AWS CLI v2** (`aws --version`) configured via `aws configure` (`region = ap-southeast-1`).
+  - **Docker Engine 24.0+** & **Docker Compose 2.20+** (or Docker Desktop).
+  - **Python 3.11+** and **Git** (for running `pytest` and inspecting evaluation scripts locally).
+- **AI & Integration Keys:**
+  - **OpenRouter API Key** (free tier `:free` models such as `nvidia/nemotron-3.5-super-vl:free` and `nvidia/nemotron-3.5-lightning:free` for `$0.00` PoC inference) and/or **Google Gemini API Key**.
+  - *(Optional for full auth/maps)* Google OAuth 2.0 Client ID/Secret, Gmail SMTP App Password, SpeedSMS Auth Token, and Google Maps Platform API Key.
+
+#### IAM Permissions Policy for Workshop Deployment
+
+Attach the following least-privilege IAM policy to the workshop deployment user or group (avoiding unrestricted `AdministratorAccess` where not required):
+
+```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MediMindWorkshopProvisioning",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*",
+        "rds:*",
+        "elasticloadbalancing:*",
+        "s3:*",
+        "ecr:*",
+        "secretsmanager:*",
+        "cloudfront:*",
+        "wafv2:*",
+        "acm:*",
+        "route53:*",
+        "logs:*",
+        "cloudwatch:*",
+        "ssm:*",
+        "budgets:*",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:CreateInstanceProfile",
+        "iam:DeleteInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
-
 ```
 
-#### Provision resources using CloudFormation
+#### Inspecting the MediMind Codebase & Configuring `.env`
 
-In this lab, we will use **N.Virginia region (us-east-1)**.
+1. Clone or navigate to the MediMind Clinical AI repository and inspect the core structure:
 
-To prepare the workshop environment, deploy this **CloudFormation Template** (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Accept all of the defaults when deploying the template. 
+```text
+chatbot_medical/
+├── app.py                     # Main Flask application & 50+ REST/SPA routes
+├── core/
+│   ├── main_fastapi.py        # FastAPI gateway (mounted with WSGIMiddleware, /docs, /health, /ready)
+│   ├── triage.py              # Double Guardrails, emergency bypass & negation handling
+│   ├── pipeline_orchestrator.py # 8-step OCR & clinical interpretation pipeline
+│   ├── rag_service.py         # Hybrid BM25 + ChromaDB + BGE Reranker service
+│   ├── nutrition_service.py   # ViFoodRec deterministic Fail-Closed Allergy Filtering
+│   ├── circuit_breaker.py     # 3-state AI Circuit Breaker (CLOSED / OPEN / HALF_OPEN)
+│   ├── storage_service.py     # Magic-byte & anti-Zip/Decompression Bomb validation
+│   └── models.py              # 6 SQLAlchemy ORM tables
+├── data/                      # 364 RAG documents, 2,462 ViFoodRec recipes, 2,144 facilities
+├── evaluation/                # quality_gates.json & 4 quantitative benchmark datasets
+├── monitoring/                # Prometheus, Grafana & Wazuh alert rules
+├── tests/                     # 83 automated pytest test files
+├── Dockerfile                 # Non-root python:3.11-slim image on port 8000
+├── docker-compose.yml         # Local stack with EBS-equivalent volumes
+└── ingest.py                  # ChromaDB vector & metadata ingestion script
+```
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+2. Create your `.env` file from `.env.example` and verify the critical runtime parameters:
 
-+ Tick 2 acknowledgement boxes
-+ Choose **Create stack**
+```bash
+cp .env.example .env
+```
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+Key environment variables used in both local Docker verification and AWS production (`core/settings.py`):
 
-The **ClouddFormation** deployment requires about 15 minutes to complete.
+| Variable | Dev / Local Value | AWS Production Value | Purpose |
+| :--- | :--- | :--- | :--- |
+| `SECRET_KEY` | Random 64-char hex | From Secrets Manager | Flask session & CSRF signing key |
+| `DATABASE_URL` | `sqlite:///./instance/medimind.db` | `postgresql+psycopg2://...` | SQLAlchemy DB URI (RDS `:5432` in AWS) |
+| `PORT` / `HOST` | `8000` / `0.0.0.0` | `8000` / `0.0.0.0` | Uvicorn/FastAPI listening socket |
+| `TRUST_PROXY_HEADERS` | `false` | `true` | Honors ALB/CloudFront `X-Forwarded-*` headers |
+| `SESSION_COOKIE_SECURE` | `false` | `true` | Enforces HTTPS-only session cookies |
+| `AI_PROVIDER` | `openrouter` | `openrouter` | Routes AI inference to OpenRouter |
+| `OPENROUTER_CHAT_MODEL` | `openrouter/free` | `openrouter/free` | Primary clinical chat & verification model |
+| `OPENROUTER_OCR_MODEL` | `nvidia/nemotron-3.5-super-vl:free` | `nvidia/nemotron-3.5-super-vl:free` | Multimodal Vision OCR schema extraction |
+| `OPENROUTER_NUTRITION_MODEL` | `nvidia/nemotron-3.5-lightning:free` | `nvidia/nemotron-3.5-lightning:free` | Clinical nutrition meal ranking |
+| `VECTOR_DB_PATH` | `./medical_vectordb` | `/app/medical_vectordb` | Persistent ChromaDB directory on EBS |
+| `AI_CIRCUIT_BREAKER_ENABLED` | `true` | `true` | Enables fail-fast fallback after 5 errors |
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+#### Local Smoke Test with Docker Compose
 
-+ **2 VPCs** have been created
+Verify that the container builds, ingests the ChromaDB knowledge base, and passes liveness/readiness probes locally before deploying to AWS:
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+```bash
+# 1. Start the containerized FastAPI + Flask application on port 8000
+docker compose up -d
 
-+ **3 EC2s** have been created
+# 2. Build the ChromaDB vector index from the 364 curated medical documents
+docker compose run --rm medical-api python ingest.py
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+# 3. Verify health, readiness, and API documentation endpoints
+curl -f http://localhost:8000/health
+curl -f http://localhost:8000/ready
+```
+
+{{% notice tip %}}
+After `docker compose up -d` succeeds, you can preview the Web SPA at `http://localhost:8000`, Swagger UI at `http://localhost:8000/docs`, and the local observability dashboard at `http://localhost:8000/system`.
+{{% /notice %}}

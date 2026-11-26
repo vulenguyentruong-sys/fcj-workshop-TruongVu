@@ -1,242 +1,132 @@
 ---
-title : "Các bước chuẩn bị"
-date : 2024-01-01 
-weight : 2
-chapter : false
-pre : " <b> 5.2. </b> "
+title: "Các bước chuẩn bị"
+date: 2026-11-26
+weight: 2
+chapter: false
+pre: " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
-```
+#### Tài khoản & Công cụ Cần thiết
+
+Trước khi khởi tạo hạ tầng AWS hoặc build Docker image, bạn cần chuẩn bị đầy đủ các thành phần sau:
+- **Tài khoản AWS** có quyền truy cập khu vực **Asia Pacific (Singapore) `ap-southeast-1`** để khởi tạo VPC, EC2, EBS, RDS, S3, ECR, ALB, CloudFront, WAF, Route 53, ACM, Secrets Manager và CloudWatch.
+- **Công cụ trên máy trạm (Workstation):**
+  - **AWS CLI v2** (`aws --version`) đã cấu hình qua `aws configure` (`region = ap-southeast-1`).
+  - **Docker Engine 24.0+** & **Docker Compose 2.20+** (hoặc Docker Desktop).
+  - **Python 3.11+** và **Git** để chạy `pytest` và kiểm tra dữ liệu đánh giá cục bộ.
+- **Khóa API AI & Dịch vụ Tích hợp:**
+  - **OpenRouter API Key** (tận dụng các mô hình `:free` như `nvidia/nemotron-3.5-super-vl:free` và `nvidia/nemotron-3.5-lightning:free` với chi phí token `$0.00`) và/hoặc **Google Gemini API Key**.
+  - *(Tùy chọn cho đăng nhập & bản đồ đầy đủ)* Google OAuth 2.0 Client ID/Secret, Gmail SMTP App Password, SpeedSMS Auth Token và Google Maps Platform API Key.
+
+#### Chính sách Quyền IAM cho Triển khai Workshop
+
+Gắn chính sách IAM đặc quyền tối thiểu sau vào tài khoản/nhóm triển khai Workshop:
+
+```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MediMindWorkshopProvisioning",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*",
+        "rds:*",
+        "elasticloadbalancing:*",
+        "s3:*",
+        "ecr:*",
+        "secretsmanager:*",
+        "cloudfront:*",
+        "wafv2:*",
+        "acm:*",
+        "route53:*",
+        "logs:*",
+        "cloudwatch:*",
+        "ssm:*",
+        "budgets:*",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:CreateInstanceProfile",
+        "iam:DeleteInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
-
 ```
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+#### Kiểm tra Mã nguồn MediMind & Cấu hình `.env`
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+1. Truy cập thư mục mã nguồn dự án MediMind Clinical AI và rà soát cấu trúc:
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+```text
+chatbot_medical/
+├── app.py                     # Máy chủ Flask chính & hơn 50 route REST/SPA
+├── core/
+│   ├── main_fastapi.py        # FastAPI gateway (gắn WSGIMiddleware, /docs, /health, /ready)
+│   ├── triage.py              # Double Guardrails, cờ đỏ cấp cứu & xử lý bẫy phủ định
+│   ├── pipeline_orchestrator.py # Pipeline OCR & diễn giải lâm sàng 8 bước
+│   ├── rag_service.py         # Dịch vụ Hybrid RAG (BM25 + ChromaDB + BGE Reranker)
+│   ├── nutrition_service.py   # Lọc dị ứng tất định Fail-Closed trên ViFoodRec
+│   ├── circuit_breaker.py     # Bộ ngắt mạch AI 3 trạng thái (CLOSED / OPEN / HALF_OPEN)
+│   ├── storage_service.py     # Kiểm tra Magic Bytes & chống Zip/Decompression Bomb
+│   └── models.py              # 6 bảng dữ liệu SQLAlchemy ORM
+├── data/                      # 364 tài liệu RAG, 2.462 món ViFoodRec, 2.144 cơ sở y tế
+├── evaluation/                # quality_gates.json & 4 bộ dữ liệu benchmark định lượng
+├── monitoring/                # Cấu hình Prometheus, Grafana & luật cảnh báo Wazuh
+├── tests/                     # 83 tệp kiểm thử tự động pytest
+├── Dockerfile                 # Image python:3.11-slim chạy quyền non-root appuser cổng 8000
+├── docker-compose.yml         # Cấu hình chạy cục bộ với volume tương đương EBS
+└── ingest.py                  # Script nạp chỉ mục vector ChromaDB
+```
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+2. Tạo tệp `.env` từ `.env.example` và rà soát các biến môi trường trọng yếu:
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
+```bash
+cp .env.example .env
+```
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+Bảng đối chiếu biến môi trường giữa Local Dev và AWS Production (`core/settings.py`):
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+| Biến môi trường | Giá trị Local Dev | Giá trị AWS Production | Vai trò |
+| :--- | :--- | :--- | :--- |
+| `SECRET_KEY` | Chuỗi hex 64 ký tự ngẫu nhiên | Đọc từ Secrets Manager | Khóa ký Session Flask & CSRF token |
+| `DATABASE_URL` | `sqlite:///./instance/medimind.db` | `postgresql+psycopg2://...` | Chuỗi kết nối CSDL (RDS `:5432` trên AWS) |
+| `PORT` / `HOST` | `8000` / `0.0.0.0` | `8000` / `0.0.0.0` | Cổng lắng nghe của Uvicorn/FastAPI |
+| `TRUST_PROXY_HEADERS` | `false` | `true` | Tin cậy header `X-Forwarded-*` từ ALB/CloudFront |
+| `SESSION_COOKIE_SECURE` | `false` | `true` | Bắt buộc Cookie chỉ truyền qua HTTPS |
+| `AI_PROVIDER` | `openrouter` | `openrouter` | Điều hướng suy luận AI qua OpenRouter |
+| `OPENROUTER_CHAT_MODEL` | `openrouter/free` | `openrouter/free` | Mô hình chat lâm sàng & kiểm chứng nguồn |
+| `OPENROUTER_OCR_MODEL` | `nvidia/nemotron-3.5-super-vl:free` | `nvidia/nemotron-3.5-super-vl:free` | Vision LLM bóc tách đơn thuốc/xét nghiệm |
+| `OPENROUTER_NUTRITION_MODEL` | `nvidia/nemotron-3.5-lightning:free` | `nvidia/nemotron-3.5-lightning:free` | Mô hình xếp hạng thực đơn dinh dưỡng |
+| `VECTOR_DB_PATH` | `./medical_vectordb` | `/app/medical_vectordb` | Thư mục lưu chỉ mục ChromaDB trên EBS |
+| `AI_CIRCUIT_BREAKER_ENABLED` | `true` | `true` | Tự động ngắt mạch chuyển Fallback sau 5 lỗi |
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+#### Kiểm thử Khởi chạy Cục bộ với Docker Compose
 
-+ 2 VPCs đã được tạo
+Xác nhận container build thành công, nạp được chỉ mục ChromaDB và vượt qua các endpoint kiểm tra sức khỏe trước khi đưa lên AWS:
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+```bash
+# 1. Khởi chạy ứng dụng FastAPI + Flask bằng Docker Compose trên cổng 8000
+docker compose up -d
 
-+ 3 EC2s đã được tạo
+# 2. Nạp chỉ mục ChromaDB từ 364 tài liệu y khoa chuẩn hóa
+docker compose run --rm medical-api python ingest.py
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+# 3. Kiểm tra liveness và readiness probe
+curl -f http://localhost:8000/health
+curl -f http://localhost:8000/ready
+```
+
+{{% notice tip %}}
+Sau khi `docker compose up -d` chạy ổn định, bạn có thể mở giao diện Web SPA tại `http://localhost:8000`, tài liệu Swagger UI tại `http://localhost:8000/docs` và trang giám sát hệ thống tại `http://localhost:8000/system`.
+{{% /notice %}}
