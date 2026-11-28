@@ -20,7 +20,7 @@ chapter: false
 
 &emsp; **Major:** Artificial Intelligence
 
-&emsp; **Class:** CBT_TEAM
+&emsp; **Class:** FCAJ-FPT-SEASON04
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
