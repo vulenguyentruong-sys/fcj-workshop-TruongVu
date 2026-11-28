@@ -17,7 +17,7 @@ chapter: false
 
 &emsp; **Ngành:** Trí tuệ nhân tạo
 
-&emsp; **Lớp:** CBT_TEAM
+&emsp; **Lớp:** FCAJ-FPT-SEASON04
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
