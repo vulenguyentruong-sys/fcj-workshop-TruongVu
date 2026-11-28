@@ -1,54 +1,32 @@
 ---
+report_key: "workshopChapters"
+report_language: "vi"
+report_fields: {"shortTitle": "Dọn dẹp tài nguyên", "customTitle": "5.6. Dọn dẹp tài nguyên AWS (Clean up Resources)", "summary": "Trạng thái hiện tại: CHƯA THỰC HIỆN XÓA — toàn bộ hạ tầng Multi-AZ vẫn đang duy trì chạy live tại https://d2typ9pphzk4as.cloudfront.net để phục vụ demo và nghiệm thu. Dưới đây là kịch bản lệnh AWS CLI đã chuẩn bị sẵn theo đúng thứ tự phụ thuộc để dọn sạch 100% tài nguyên (tránh phát sinh phí NAT Gateway / RDS / EC2) ngay sau khi hoàn tất bảo vệ.", "content": "", "notes": "", "steps": [{"num": "Bước 5.6.1", "title": "Vô hiệu hóa & Xóa Amazon CloudFront và AWS WAF (us-east-1)", "summary": "Bắt đầu xóa từ lớp biên ngoài cùng: tắt CloudFront Distribution `E3FNAGSNUILKRW`, chờ trạng thái chuyển sang `Deployed (Disabled)` rồi xóa Distribution và Web ACL `medimind-edge-waf` tại `us-east-1`.", "code": "# CHỈ CHẠY SAU KHI HOÀN TẤT BẢO VỆ & DEMO LIVE\n# 1. Disable & xóa CloudFront Distribution E3FNAGSNUILKRW\naws cloudfront get-distribution-config --id E3FNAGSNUILKRW > /tmp/cf-raw.json\nETAG=$(jq -r '.ETag' /tmp/cf-raw.json)\njq '.DistributionConfig.Enabled = false | .DistributionConfig' /tmp/cf-raw.json > /tmp/cf-disabled.json\naws cloudfront update-distribution --id E3FNAGSNUILKRW --if-match \"$ETAG\" --distribution-config file:///tmp/cf-disabled.json\naws cloudfront wait distribution-deployed --id E3FNAGSNUILKRW\nETAG2=$(aws cloudfront get-distribution-config --id E3FNAGSNUILKRW --query 'ETag' --output text)\naws cloudfront delete-distribution --id E3FNAGSNUILKRW --if-match \"$ETAG2\"\n\n# 2. Xóa AWS WAF Web ACL medimind-edge-waf (Global / us-east-1)\nWAF_INFO=$(aws wafv2 list-web-acls --scope CLOUDFRONT --region us-east-1 --query \"WebACLs[?Name=='medimind-edge-waf'] | [0]\")\nWAF_ID=$(echo \"$WAF_INFO\" | jq -r '.Id'); WAF_LOCK=$(echo \"$WAF_INFO\" | jq -r '.LockToken')\naws wafv2 delete-web-acl --name medimind-edge-waf --scope CLOUDFRONT --region us-east-1 --id \"$WAF_ID\" --lock-token \"$WAF_LOCK\"", "note": "CloudFront bắt buộc phải chuyển `Enabled = false` và chờ triển khai xong (~5–10 phút) trước khi cho phép `delete-distribution`."}, {"num": "Bước 5.6.2", "title": "Xóa Auto Scaling Group, Launch Template, Golden AMI, ALB & Amazon EFS", "summary": "Hạ `medimind-asg` về `0` để chấm dứt 2 EC2 `t3.small`, gỡ Golden AMI/Snapshot, xóa `medimind-alb` & Target Group `medimind-tg`, sau đó xóa 2 Mount Targets rồi mới xóa `medimind-shared-efs`.", "code": "export AWS_REGION=ap-southeast-1\n# 1. Xóa Auto Scaling Group (force-delete chấm dứt 2 EC2 & EBS tự động) + Launch Template + AMI\naws autoscaling delete-auto-scaling-group --region $AWS_REGION --auto-scaling-group-name medimind-asg --force-delete\naws ec2 delete-launch-template --region $AWS_REGION --launch-template-name medimind-app-lt\nAMI_ID=$(aws ec2 describe-images --owners self --region $AWS_REGION --filters \"Name=name,Values=medimind-clinical-ami-v1\" --query 'Images[0].ImageId' --output text)\n[ \"$AMI_ID\" != \"None\" ] && aws ec2 deregister-image --region $AWS_REGION --image-id \"$AMI_ID\"\n\n# 2. Xóa Application Load Balancer & Target Group\nALB_ARN=$(aws elbv2 describe-load-balancers --names medimind-alb --region $AWS_REGION --query 'LoadBalancers[0].LoadBalancerArn' --output text)\nTG_ARN=$(aws elbv2 describe-target-groups --names medimind-tg --region $AWS_REGION --query 'TargetGroups[0].TargetGroupArn' --output text)\naws elbv2 delete-load-balancer --region $AWS_REGION --load-balancer-arn \"$ALB_ARN\"\nsleep 30\naws elbv2 delete-target-group --region $AWS_REGION --target-group-arn \"$TG_ARN\"\n\n# 3. Xóa 2 EFS Mount Targets trước rồi xóa Amazon EFS\nEFS_ID=$(aws efs describe-file-systems --region $AWS_REGION --query \"FileSystems[?Name=='medimind-shared-efs'].FileSystemId | [0]\" --output text)\nfor MT in $(aws efs describe-mount-targets --region $AWS_REGION --file-system-id \"$EFS_ID\" --query 'MountTargets[*].MountTargetId' --output text); do\n  aws efs delete-mount-target --region $AWS_REGION --mount-target-id \"$MT\"\ndone\nsleep 45\naws efs delete-file-system --region $AWS_REGION --file-system-id \"$EFS_ID\""}, {"num": "Bước 5.6.3", "title": "Xóa RDS PostgreSQL, 2 NAT Gateways, S3/ECR/Secrets/CloudWatch & VPC", "summary": "Xóa các tài nguyên tính phí theo giờ còn lại (`medimind-pg-db`, 2 NAT Gateways + 2 Elastic IPs), dọn sạch S3 Versioning Bucket, ECR, CodeBuild, 3 Secrets, CloudWatch/SNS, IAM Role và cuối cùng xóa `medimind-vpc`.", "code": "export AWS_REGION=ap-southeast-1\nACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)\n\n# 1. Xóa RDS PostgreSQL & DB Subnet Group\naws rds delete-db-instance --region $AWS_REGION --db-instance-identifier medimind-pg-db --skip-final-snapshot\naws rds wait db-instance-deleted --region $AWS_REGION --db-instance-identifier medimind-pg-db\naws rds delete-db-subnet-group --region $AWS_REGION --db-subnet-group-name medimind-db-subnet-group\n\n# 2. Xóa 2 NAT Gateways & giải phóng Elastic IPs (quan trọng để ngừng phí IPv4/NAT)\nVPC_ID=$(aws ec2 describe-vpcs --region $AWS_REGION --filters \"Name=cidr,Values=10.0.0.0/16\" --query 'Vpcs[0].VpcId' --output text)\nfor NAT in $(aws ec2 describe-nat-gateways --region $AWS_REGION --filter \"Name=vpc-id,Values=$VPC_ID\" \"Name=state,Values=available\" --query 'NatGateways[*].NatGatewayId' --output text); do\n  aws ec2 delete-nat-gateway --region $AWS_REGION --nat-gateway-id \"$NAT\"\ndone\n# Sau khi NAT chuyển sang deleted, giải phóng Elastic IPs: aws ec2 release-address --allocation-id <EIP_ALLOC>\n\n# 3. Xóa ECR, CodeBuild, 3 Secrets Manager, CloudWatch Alarms/Logs, SNS & S3 Backup Bucket\naws ecr delete-repository --region $AWS_REGION --repository-name medimind-clinical-ai --force\naws codebuild delete-project --region $AWS_REGION --name medimind-docker-build\nfor SEC in medimind/app-db medimind/auth-otp medimind/ai-providers; do\n  aws secretsmanager delete-secret --region $AWS_REGION --secret-id \"$SEC\" --force-delete-without-recovery\ndone\naws cloudwatch delete-alarms --region $AWS_REGION --alarm-names medimind-ec2-high-cpu medimind-alb-unhealthy-hosts medimind-rds-high-cpu\naws logs delete-log-group --region $AWS_REGION --log-group-name /medimind/clinical-api\n# Làm rỗng toàn bộ Object Versions của bucket medimind-clinical-backup-$ACCOUNT_ID rồi chạy aws s3api delete-bucket\n\n# 4. Xóa VPC Endpoint, Security Groups, Route Tables, IGW, 6 Subnets, VPC & IAM Role medimind-ec2-role"}, {"num": "Bước 5.6.4", "title": "Đối soát AWS Billing & Cost Explorer sau khi dọn dẹp (Kế hoạch hậu bảo vệ)", "summary": "Sau khi hoàn tất bảo vệ và chạy các bước `5.6.1` – `5.6.3`, kiểm tra lại các màn hình **EC2 (0 running)**, **NAT Gateways (0 available)**, **Elastic IPs (0 allocated)**, **RDS (0 instances)**, **EFS (0 file systems)** và **AWS Billing Dashboard** sau 24 giờ để xác nhận chi phí phát sinh hàng ngày trở về `$0.00`, sau đó cập nhật ảnh minh chứng vào mục này.", "note": "Mục 5.6 cố ý giữ trạng thái **Chưa thực hiện** cho tới khi hoàn tất buổi bảo vệ demo live để không đánh sập URL `https://d2typ9pphzk4as.cloudfront.net`."}]}
+report_index: 5
+report_shared: {"code": "5.6"}
 title: "Dọn dẹp tài nguyên"
-date: 2026-11-26
+date: "2026-11-28"
 weight: 6
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-Chúc mừng bạn đã hoàn thành bài workshop **Xây dựng & Triển khai MediMind Clinical AI trên AWS**! Bạn đã thiết kế thành công VPC 3 tầng cô lập, triển khai ứng dụng AI lâm sàng trong Docker kết hợp ChromaDB trên EBS và RDS PostgreSQL, bảo vệ biên bằng Route 53, WAF, CloudFront, ACM, ALB và kiểm chứng đầy đủ các tiêu chuẩn an toàn y khoa.
+# 5.6. Dọn dẹp tài nguyên AWS (Clean up Resources)
 
-#### Thứ tự Dọn dẹp Tài nguyên Theo Ràng buộc Phụ thuộc
+> **Trạng thái hiện tại:** ⏳ **Chưa thực hiện xóa** — toàn bộ hạ tầng Multi-AZ vẫn đang duy trì chạy live tại `https://d2typ9pphzk4as.cloudfront.net` để phục vụ demo và nghiệm thu. Kịch bản lệnh bên dưới đã được chuẩn bị sẵn theo đúng thứ tự phụ thuộc để chạy ngay sau khi hoàn tất bảo vệ.
 
-Để tránh lỗi kẹt Network Interface (ENI) hoặc phát sinh chi phí ngầm sau khi kết thúc demo, hãy xóa tài nguyên theo đúng thứ tự từ ngoài vào trong dưới đây:
+## Bước 5.6.1 — Vô hiệu hóa & Xóa Amazon CloudFront và AWS WAF (`us-east-1`)
 
-1. **Amazon Route 53:** Xóa bản ghi `A` Alias trỏ tới CloudFront trong Hosted Zone của bạn.
-2. **Amazon CloudFront & AWS WAF:** Tắt (Disable) và xóa CloudFront Distribution, sau đó xóa Web ACL `medimind-edge-waf` (phạm vi `CLOUDFRONT`).
-3. **Application Load Balancer & ACM:** Xóa `medimind-alb`, Target Group `medimind-tg` và các chứng chỉ ACM không còn sử dụng.
-4. **Amazon EC2 & Amazon EBS:** Terminate `medimind-app-server` và kiểm tra chắc chắn cả ổ hệ thống lẫn ổ đĩa dữ liệu **20 GB `gp3` EBS** của ChromaDB đều đã bị xóa.
-5. **NAT Gateway & Elastic IP:** Xóa `medimind-nat-gw`, chờ trạng thái chuyển sang `Deleted`, sau đó **giải phóng (Release) địa chỉ Elastic IP** đi kèm.
-6. **Amazon RDS PostgreSQL & DB Subnet Group:** Xóa `medimind-pg-db` (chọn bỏ qua final snapshot đối với môi trường thực hành), chờ xóa hoàn tất rồi xóa `medimind-db-subnet-group`.
-7. **Amazon S3 & Amazon ECR:** Làm rỗng và xóa bucket sao lưu S3 (`medimind-clinical-backup-<account-id>`, bao gồm các phiên bản cũ nếu bật Versioning) và xóa kho ECR:
+Tắt CloudFront Distribution `E3FNAGSNUILKRW`, chờ `Deployed (Disabled)` rồi xóa Distribution và Web ACL `medimind-edge-waf` tại `us-east-1`.
 
-```bash
-export AWS_REGION=ap-southeast-1
-export ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+## Bước 5.6.2 — Xóa Auto Scaling Group, Launch Template, Golden AMI, ALB & Amazon EFS
 
-# Làm rỗng và xóa S3 bucket sao lưu
-aws s3 rm s3://medimind-clinical-backup-${ACCOUNT_ID} --recursive
-aws s3 rb s3://medimind-clinical-backup-${ACCOUNT_ID} --force
+Hạ `medimind-asg` về `0` (`--force-delete`), xóa Launch Template `medimind-app-lt`, hủy đăng ký Golden AMI `medimind-clinical-ami-v1`, xóa `medimind-alb`, `medimind-tg`, 2 EFS Mount Targets và `medimind-shared-efs`.
 
-# Xóa ECR repository và toàn bộ Docker image layers
-aws ecr delete-repository --repository-name medimind-clinical-ai --force --region $AWS_REGION
-```
+## Bước 5.6.3 — Xóa RDS PostgreSQL, 2 NAT Gateways, S3/ECR/Secrets/CloudWatch & VPC
 
-8. **Secrets Manager, CloudWatch Logs & IAM Role:** Xóa 3 nhóm secrets (`medimind/app-db`, `medimind/auth-otp`, `medimind/ai-providers`), xóa Log Group `/medimind/clinical-api`, và xóa `medimind-ec2-role` cùng Instance Profile:
+Xóa `medimind-pg-db` & `medimind-db-subnet-group`, xóa 2 NAT Gateways & giải phóng Elastic IPs, dọn ECR, CodeBuild, 3 Secrets Manager, CloudWatch Alarms/Logs, SNS, S3 Backup Bucket, IAM Role `medimind-ec2-role` và `medimind-vpc`.
 
-```bash
-for SECRET_ID in medimind/app-db medimind/auth-otp medimind/ai-providers; do
-  aws secretsmanager delete-secret --secret-id $SECRET_ID --force-delete-without-recovery --region $AWS_REGION
-done
-aws logs delete-log-group --log-group-name /medimind/clinical-api --region $AWS_REGION
-```
+## Bước 5.6.4 — Đối soát AWS Billing & Cost Explorer sau khi dọn dẹp
 
-9. **Security Groups, Route Tables, IGW, Subnets & VPC:** Xóa `sg-medimind-rds`, `sg-medimind-ec2`, `sg-medimind-alb`; hủy liên kết và xóa các Route Table tùy chỉnh; tách và xóa `medimind-igw`; xóa 6 Subnets; cuối cùng xóa `medimind-vpc`.
-10. **Môi trường Docker Cục bộ:** Dừng và dọn các container ứng dụng và stack giám sát trên máy trạm:
-
-```bash
-docker compose down -v
-docker compose -f monitoring/docker-compose.observability.yml down -v
-```
-
-{{% notice tip %}}
-**Lưu ý Tránh Phát sinh Chi phí Ngầm:** **Elastic IP** không gắn vào tài nguyên (`$0.005/giờ`), **NAT Gateway** đang chạy (`$0.059/giờ` tại `ap-southeast-1`) và **Secrets Manager** nếu xóa thiếu cờ `--force-delete-without-recovery` vẫn có thể tính phí. Luôn kiểm tra lại mục `EC2 -> Elastic IPs`, `VPC -> NAT Gateways` và `AWS Billing -> Bills` sau khi dọn dẹp 24 giờ.
-{{% /notice %}}
+Sau khi thực thi dọn dẹp hậu bảo vệ, kiểm tra xác nhận 0 tài nguyên tính phí theo giờ còn chạy và bổ sung ảnh minh chứng Billing `$0.00/ngày`.
